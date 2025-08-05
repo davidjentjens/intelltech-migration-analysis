@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GitHub vs GitLab Migration Analysis
 
-## Getting Started
+A modularized React/Next.js application for comparing GitHub and GitLab platforms for enterprise migration decisions, specifically focused on .NET development environments.
 
-First, run the development server:
+## 🏗️ Architecture
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The application has been modularized into the following structure:
+
+### 📁 Directory Structure
+
+```
+src/
+├── types/           # TypeScript interfaces and types
+├── data/            # Data files and constants
+├── components/      # Reusable React components
+└── app/            # Next.js app directory
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔧 Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Core Components
+- **CostCard**: Displays cost comparison information
+- **AICard**: Displays AI/ML capabilities comparison
+- **PlatformCard**: Comprehensive platform comparison card
+- **TabNavigation**: Tab-based navigation component
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### Section Components
+- **OverviewSection**: Main comparison overview
+- **CostsSection**: Detailed cost analysis
+- **AISection**: AI/ML capabilities analysis
 
-## Learn More
+### 📊 Data Structure
 
-To learn more about Next.js, take a look at the following resources:
+#### Types (`src/types/index.ts`)
+- `SpreadsheetData`: Original spreadsheet data structure
+- `CostData`: Cost information interface
+- `ResearchData`: Research data structure
+- `PlatformData`: Platform comparison data
+- `TabItem`: Navigation tab interface
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Data Files
+- `spreadsheetData.ts`: Original spreadsheet data
+- `researchData.ts`: Market research and pricing data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Features
 
-## Deploy on Vercel
+### 📈 Comparison Areas
+1. **Overview**: Side-by-side platform comparison
+2. **Costs**: Detailed cost analysis for 47 users
+3. **AI Resources**: GitHub Copilot vs GitLab Duo comparison
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🎯 Key Insights
+- **GitHub Enterprise Cloud**: Recommended option
+- **Cost Analysis**: Detailed breakdown for enterprise plans
+- **AI Integration**: Focus on .NET development capabilities
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+```bash
+npm install
+```
+
+### Running the Application
+```bash
+npm run dev
+```
+
+### Building for Production
+```bash
+npm run build
+```
+
+## 📋 Data Sources
+
+### Pricing Information
+- GitLab Ultimate: $99/user/month
+- GitHub Enterprise Cloud: $21/user/month
+- GitHub Copilot Enterprise: $39/user/month
+- Exchange rate: 1 USD = 5.50 BRL
+
+### Research Basis
+- 47 enterprise users
+- .NET Framework to .NET Core migration focus
+- Enterprise security requirements
+- AI/ML integration needs
+
+## 🎨 UI/UX Features
+
+### Responsive Design
+- Mobile-friendly layout
+- Horizontal scrolling for comparison cards
+- Tab-based navigation
+
+### Visual Indicators
+- Color-coded platform cards (GitLab: Orange, GitHub: Gray)
+- Rating systems for AI capabilities
+- Cost comparison with detailed breakdowns
+- Security pros/cons visualization
+
+## 🔄 Migration from Original
+
+The original monolithic component (`remixed-ca8a2514.tsx`) has been broken down into:
+
+1. **Data Separation**: Moved all data to dedicated files
+2. **Component Modularization**: Created reusable components
+3. **Type Safety**: Added TypeScript interfaces
+4. **Maintainability**: Improved code organization and readability
+
+## 📝 Usage
+
+The application provides a comprehensive analysis tool for enterprise decision-makers evaluating GitHub vs GitLab migration options. The modular structure allows for easy updates to pricing, features, or comparison criteria.
+
+## 🤝 Contributing
+
+To add new comparison criteria or update data:
+
+1. Update the appropriate data file in `src/data/`
+2. Add new types if needed in `src/types/`
+3. Create new components in `src/components/` if required
+4. Update the main page to include new sections
+
+## 📄 License
+
+This project is for internal enterprise analysis and comparison purposes.

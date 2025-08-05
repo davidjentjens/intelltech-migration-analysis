@@ -1,0 +1,9 @@
+Aplicação/Cenário,Número de Usuários Principais,Número de Usuários Copilot,Custo Anual Estimado da Licença (USD),Custo Anual Estimado da Licença (BRL),Notas Chave
+GitLab CE On-premises Oracle VM,47,0,$0,"R$0,00","Custo de licença apenas, exclui despesas substanciais de infraestrutura e operacionais."
+GitLab EE Premium On-premises Oracle VM,47,0,$16.356,"R$89.958,00","Custo de licença apenas, exclui despesas de infraestrutura e operacionais."
+GitLab EE Ultimate On-premises Oracle VM,47,0,$55.836,"R$307.100,00","Custo de licença apenas, exclui despesas de infraestrutura e operacionais. Preço Ultimate On-premises inferido e requer confirmação de vendas."
+GitLab EE Premium Cloud,47,0,$16.356,"R$89.958,00",Potencial para descontos significativos através de negociação.
+GitLab EE Ultimate Cloud,47,0,$55.836,"R$307.100,00",Potencial para descontos significativos através de negociação.
+GitHub EE On-premises Azure VM,47,0,$11.844,"R$65.142,00","Custo de licença apenas, exclui despesas de infraestrutura e operacionais."
+GitHub EE Cloud,47,0,$11.844,"R$65.142,00",Exclui potenciais custos de excedente de minutos de CI/CD ou armazenamento.
+GitHub EE Cloud + 30 GitHub Copilot Enterprise,47,30,$25.884,"R$142.362,00",Potencial para encargos de uso excedente para recursos de CI/CD/IA em nuvem.
