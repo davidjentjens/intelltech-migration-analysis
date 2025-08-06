@@ -38,7 +38,8 @@ export const spreadsheetData: SpreadsheetData = {
     // GitHub Options
     github_ee_onpremises: [
       "Controle total dos dados",
-      "Recursos GitHub Enterprise completos"
+      "Recursos GitHub Enterprise completos",
+      "Aproveita migração já iniciada"
     ],
     github_ee_cloud: [
       "Custo apenas de licenças",
@@ -46,7 +47,10 @@ export const spreadsheetData: SpreadsheetData = {
       "Atualizações automáticas",
       "Aproveita migração já iniciada",
       "Infraestrutura gerenciada",
-      "Acesso a ferramentas de IA de ponta"
+      "Acesso a ferramentas de IA de ponta",
+      "**Migração assistida .NET Framework → .NET Core**",
+      "**Geração automatizada de unit tests**",
+      "**Suggestions para patterns modernos (async/await, DI)**"
     ],
     github_ee_cloud_copilot: [
       "Custo apenas de licenças e Copilot",
@@ -54,14 +58,18 @@ export const spreadsheetData: SpreadsheetData = {
       "Atualizações automáticas",
       "Aproveita migração já iniciada",
       "Infraestrutura gerenciada",
-      "Ferramentas de IA de ponta incluídas"
+      "Ferramentas de IA de ponta incluídas",
+      "**Migração assistida .NET Framework → .NET Core**",
+      "**Geração automatizada de unit tests**",
+      "**Suggestions para patterns modernos (async/await, DI)**",
+      "**Integração direta com Azure services**"
     ]
   },
   desvantagens: {
     // GitLab Options
     gitlab_ce_onpremises: [
       "Não aproveitaremos o investimento realizado na migração",
-      "Atualizações manuais (atualmente desatualizado)",
+      "Atualizações manuais",
       "Recursos limitados para modernização .NET",
       "Sem recursos de IA"
     ],

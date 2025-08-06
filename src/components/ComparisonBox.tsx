@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import { CheckCircle, XCircle, DollarSign, Cloud, Server, Zap } from 'lucide-react';
-import { CostData } from '../types';
 import { spreadsheetData, researchData } from '../data';
+
+// Helper function to render text with bold markdown
+const renderTextWithBold = (text: string) => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
 
 interface ComparisonBoxProps {
   platform: 'gitlab' | 'github';
@@ -48,6 +58,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
 
   React.useEffect(() => {
     setSubtype(options[0]?.key || '');
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deploymentType, platform]);
 
   const advantages = spreadsheetData.vantagens[selectedOption.key as keyof typeof spreadsheetData.vantagens] || [];
@@ -145,7 +156,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             <div className="text-xs text-gray-600 mt-1">{selectedOption.cost.detalhes}</div>
             {(deploymentType === 'onpremises' || (platform === 'github' && selectedOption.key === 'github_ee_cloud')) && (
               <div className="text-xs text-red-600 mt-2 font-semibold">
-                ⚠️ SEM recursos de IA (apenas Cloud)
+                ⚠️ SEM recursos de IA (apenas Github EE + Copilot)
               </div>
             )}
             {(deploymentType === 'cloud' && platform === 'github' && selectedOption.key === 'github_ee_cloud_copilot') && (
@@ -173,7 +184,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             {advantages.map((item, index) => (
               <div key={index} className="flex items-start gap-2">
                 <CheckCircle className="w-3 h-3 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-700">{item}</span>
+                <span className="text-sm text-gray-700">{renderTextWithBold(item)}</span>
               </div>
             ))}
           </div>

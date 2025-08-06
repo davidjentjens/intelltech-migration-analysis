@@ -33,6 +33,9 @@ export interface CostData {
   link: string;
   explicacao?: string;
   // Detailed cost breakdown
+  licenseMensal?: string;
+  infrastructureMensal?: string;
+  totalMensal?: string;
   licenseAnual?: string;
   infrastructureAnual?: string;
   totalAnual?: string;

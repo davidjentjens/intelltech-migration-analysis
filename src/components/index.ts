@@ -4,4 +4,5 @@ export { default as PlatformCard } from './PlatformCard';
 export { default as ComparisonBox } from './ComparisonBox';
 export { default as TabNavigation } from './TabNavigation';
 export { default as OverviewSection } from './OverviewSection';
-export { default as AISection } from './AISection'; 
+export { default as AISection } from './AISection';
+export { default as CostTable } from './CostTable'; 

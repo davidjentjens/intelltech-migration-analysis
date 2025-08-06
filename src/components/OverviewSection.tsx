@@ -25,86 +25,115 @@ const OverviewSection: React.FC = () => {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b-2 border-yellow-300">
-                <th className="text-left py-3 px-4 font-semibold">Plataforma</th>
-                <th className="text-center py-3 px-4 font-semibold">Licenças (Anual)</th>
-                <th className="text-center py-3 px-4 font-semibold">Infraestrutura (Anual)</th>
-                <th className="text-center py-3 px-4 font-semibold">Total Anual</th>
-                <th className="text-center py-3 px-4 font-semibold">VM Specs</th>
+                <th className="text-left font-semibold">Plataforma</th>
+                <th className="text-center font-semibold">Licenças (Mensal)</th>
+                <th className="text-center font-semibold">Infraestrutura (Mensal)</th>
+                <th className="text-center font-semibold">Total Mensal</th>
+                <th className="text-center font-semibold">Licenças (Anual)</th>
+                <th className="text-center font-semibold">Infraestrutura (Anual)</th>
+                <th className="text-center font-semibold">Total Anual</th>
+                <th className="text-center font-semibold">VM Specs</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-yellow-200">
-                <td className="py-3 px-4 font-medium">GitLab CE (Self-hosted)</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ce_onpremises.licenseAnual}</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ce_onpremises.infrastructureAnual}</td>
-                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ce_onpremises.totalAnual}</td>
-                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ce_onpremises.vmSpecs}</td>
+                <td className="font-medium">GitLab CE (Self-hosted)</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ce_onpremises.licenseMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ce_onpremises.infrastructureMensal}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ce_onpremises.totalMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ce_onpremises.licenseAnual}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ce_onpremises.infrastructureAnual}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ce_onpremises.totalAnual}</td>
+                <td className="text-xs">{researchData.custos.gitlab_ce_onpremises.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
-                <td className="py-3 px-4 font-medium">GitLab EE Premium (Self-hosted)</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_premium_onpremises.licenseAnual}</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_premium_onpremises.infrastructureAnual}</td>
-                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ee_premium_onpremises.totalAnual}</td>
-                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ee_premium_onpremises.vmSpecs}</td>
+                <td className="font-medium">GitLab EE Premium (Self-hosted)</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_premium_onpremises.licenseMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_premium_onpremises.infrastructureMensal}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ee_premium_onpremises.totalMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_premium_onpremises.licenseAnual}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_premium_onpremises.infrastructureAnual}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ee_premium_onpremises.totalAnual}</td>
+                <td className="text-xs">{researchData.custos.gitlab_ee_premium_onpremises.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
-                <td className="py-3 px-4 font-medium">GitLab EE Ultimate (Self-hosted)</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_ultimate_onpremises.licenseAnual}</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_ultimate_onpremises.infrastructureAnual}</td>
-                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ee_ultimate_onpremises.totalAnual}</td>
-                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ee_ultimate_onpremises.vmSpecs}</td>
+                <td className="font-medium">GitLab EE Ultimate (Self-hosted)</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_ultimate_onpremises.licenseMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_ultimate_onpremises.infrastructureMensal}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ee_ultimate_onpremises.totalMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_ultimate_onpremises.licenseAnual}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_ultimate_onpremises.infrastructureAnual}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ee_ultimate_onpremises.totalAnual}</td>
+                <td className="text-xs">{researchData.custos.gitlab_ee_ultimate_onpremises.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
-                <td className="py-3 px-4 font-medium">GitLab EE Premium (Cloud)</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_premium_cloud.licenseAnual}</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_premium_cloud.infrastructureAnual}</td>
-                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ee_premium_cloud.totalAnual}</td>
-                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ee_premium_cloud.vmSpecs}</td>
+                <td className="font-medium">GitLab EE Premium (Cloud)</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_premium_cloud.licenseMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_premium_cloud.infrastructureMensal}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ee_premium_cloud.totalMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_premium_cloud.licenseAnual}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_premium_cloud.infrastructureAnual}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ee_premium_cloud.totalAnual}</td>
+                <td className="text-xs">{researchData.custos.gitlab_ee_premium_cloud.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
-                <td className="py-3 px-4 font-medium">GitLab EE Ultimate (Cloud)</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_ultimate_cloud.licenseAnual}</td>
-                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_ultimate_cloud.infrastructureAnual}</td>
-                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ee_ultimate_cloud.totalAnual}</td>
-                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ee_ultimate_cloud.vmSpecs}</td>
+                <td className="font-medium">GitLab EE Ultimate (Cloud)</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_ultimate_cloud.licenseMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_ultimate_cloud.infrastructureMensal}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ee_ultimate_cloud.totalMensal}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_ultimate_cloud.licenseAnual}</td>
+                <td className="text-center py-1">{researchData.custos.gitlab_ee_ultimate_cloud.infrastructureAnual}</td>
+                <td className="text-center font-semibold">{researchData.custos.gitlab_ee_ultimate_cloud.totalAnual}</td>
+                <td className="text-xs">{researchData.custos.gitlab_ee_ultimate_cloud.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
-                <td className="py-3 px-4 font-medium">GitHub EE (Self-hosted)</td>
-                <td className="text-center py-3 px-4">{researchData.custos.github_ee_onpremises.licenseAnual}</td>
-                <td className="text-center py-3 px-4">{researchData.custos.github_ee_onpremises.infrastructureAnual}</td>
-                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.github_ee_onpremises.totalAnual}</td>
-                <td className="py-3 px-4 text-xs">{researchData.custos.github_ee_onpremises.vmSpecs}</td>
+                <td className="font-medium">GitHub EE (Self-hosted)</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_onpremises.licenseMensal}</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_onpremises.infrastructureMensal}</td>
+                <td className="text-center font-semibold">{researchData.custos.github_ee_onpremises.totalMensal}</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_onpremises.licenseAnual}</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_onpremises.infrastructureAnual}</td>
+                <td className="text-center font-semibold">{researchData.custos.github_ee_onpremises.totalAnual}</td>
+                <td className="text-xs">{researchData.custos.github_ee_onpremises.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200 bg-green-50">
-                <td className="py-3 px-4 font-medium">GitHub EE (Cloud)</td>
-                <td className="text-center py-3 px-4">{researchData.custos.github_ee_cloud.licenseAnual}</td>
-                <td className="text-center py-3 px-4">{researchData.custos.github_ee_cloud.infrastructureAnual}</td>
-                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.github_ee_cloud.totalAnual}</td>
-                <td className="py-3 px-4 text-xs">{researchData.custos.github_ee_cloud.vmSpecs}</td>
+                <td className="font-medium">GitHub EE (Cloud)</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_cloud.licenseMensal}</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_cloud.infrastructureMensal}</td>
+                <td className="text-center font-semibold">{researchData.custos.github_ee_cloud.totalMensal}</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_cloud.licenseAnual}</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_cloud.infrastructureAnual}</td>
+                <td className="text-center font-semibold">{researchData.custos.github_ee_cloud.totalAnual}</td>
+                <td className="text-xs">{researchData.custos.github_ee_cloud.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200 bg-green-50">
-                <td className="py-3 px-4 font-medium">GitHub EE + Copilot (Cloud)</td>
-                <td className="text-center py-3 px-4">{researchData.custos.github_ee_cloud_copilot.licenseAnual}</td>
-                <td className="text-center py-3 px-4">{researchData.custos.github_ee_cloud_copilot.infrastructureAnual}</td>
-                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.github_ee_cloud_copilot.totalAnual}</td>
-                <td className="py-3 px-4 text-xs">{researchData.custos.github_ee_cloud_copilot.vmSpecs}</td>
+                <td className="font-medium">GitHub EE + Copilot (Cloud)</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_cloud_copilot.licenseMensal}</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_cloud_copilot.infrastructureMensal}</td>
+                <td className="text-center font-semibold">{researchData.custos.github_ee_cloud_copilot.totalMensal}</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_cloud_copilot.licenseAnual}</td>
+                <td className="text-center py-1">{researchData.custos.github_ee_cloud_copilot.infrastructureAnual}</td>
+                <td className="text-center font-semibold">{researchData.custos.github_ee_cloud_copilot.totalAnual}</td>
+                <td className="text-xs">{researchData.custos.github_ee_cloud_copilot.vmSpecs}</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-                   {/* Análise de Migração */}
-             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 max-w-4xl mx-auto">
-               <p className="text-gray-700 text-base leading-relaxed">
-                 Há algumas semanas iniciamos um projeto de migração para o GitHub Cloud Enterprise, 
-                 buscando utilizar as ferramentas de IA que a plataforma oferece, incluindo o GitHub Copilot. 
-                 Já realizamos a tradução dos scripts de CI/CD do GitLab para GitHub Actions e parte da 
-                 migração dos repositórios. O trabalho foi pausado temporariamente para revisão dos 
-                 requisitos do projeto, mas <strong className="text-blue-600">continuar com GitHub permitiria aproveitar todo esse trabalho já realizado</strong>&nbsp;
-                 e manter o progresso já alcançado.
-               </p>
-             </div>
+                                      {/* Análise de Migração */}
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 max-w-4xl mx-auto">
+                <p className="text-gray-700 text-base leading-relaxed">
+                  Há algumas semanas iniciamos um projeto de migração para o GitHub Cloud Enterprise, 
+                  buscando utilizar as ferramentas de IA que a plataforma oferece, incluindo o GitHub Copilot. 
+                  Já realizamos a tradução dos scripts de CI/CD do GitLab para GitHub Actions e parte da 
+                  migração dos repositórios. O trabalho foi pausado temporariamente para revisão dos 
+                  requisitos do projeto, mas <strong className="text-blue-600">continuar com GitHub permitiria aproveitar todo esse trabalho já realizado</strong>&nbsp;
+                  e manter o progresso já alcançado.
+                </p>
+              </div>
+
+
 
                    {/* Recomendação Principal */}
              <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 text-center">

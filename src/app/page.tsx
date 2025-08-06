@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import TabNavigation from '../components/TabNavigation';
 import OverviewSection from '../components/OverviewSection';
 import AISection from '../components/AISection';
@@ -24,6 +25,18 @@ const ComparisonPage: React.FC = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
+          {/* Logo */}
+          <div className="mb-6">
+            <Image
+              src="/intelltech.png"
+              alt="Intelltech Logo"
+              width={200}
+              height={80}
+              className="mx-auto"
+              priority
+            />
+          </div>
+          
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
             Análise Estratégica: GitHub vs GitLab
           </h1>
