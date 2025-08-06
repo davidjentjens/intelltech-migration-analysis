@@ -124,6 +124,10 @@
   "ai": {
     "title": "Recursos de Inteligência Artificial",
     "subtitle": "Análise detalhada das ferramentas de IA disponíveis",
+    "introduction": {
+      "title": "Importância Estratégica para Modernização",
+      "content": "A modernização do nosso software legado representa um desafio estratégico fundamental para a empresa. As ferramentas de Inteligência Artificial emergiram como aceleradores essenciais neste processo, oferecendo capacidades avançadas de refatoração de código, migração automatizada de frameworks e detecção proativa de vulnerabilidades. Para o contexto específico do SHMS e sua arquitetura .NET Framework, a escolha da plataforma Git com recursos de IA adequados pode significar a diferença entre uma migração manual custosa e uma transformação eficiente e orientada por dados."
+    },
     "copilotBenefits": "GitHub Copilot para Modernização do SHMS",
     "copilotDescription": "Ferramentas avançadas de IA que aceleram a modernização e melhorias de código",
     "cloudOnlyWarning": "Recursos de IA APENAS disponíveis em soluções CLOUD",

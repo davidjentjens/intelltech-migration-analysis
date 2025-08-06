@@ -31,6 +31,19 @@ const AISection: React.FC = () => {
         </div>
       </div>
 
+      {/* Introduction paragraph about AI importance for legacy software modernization */}
+      <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+        <div className="flex items-start gap-4">
+          <div className="text-blue-600 text-2xl">💡</div>
+          <div>
+            <h3 className="text-lg font-semibold text-blue-800 mb-3">
+              {t('ai.introduction.title')}
+            </h3>
+            <p className="text-blue-700 leading-relaxed">{t('ai.introduction.content')}</p>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {aiCards.map((card, index) => (
           <AICard key={index} platform={card.platform} data={card.data} />
