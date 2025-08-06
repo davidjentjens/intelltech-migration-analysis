@@ -168,6 +168,90 @@ const AISection: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Agente de Código */}
+          <div className="bg-white border border-gray-200 rounded-lg p-5">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="text-2xl">🤖</div>
+              <h4 className="text-lg font-bold text-purple-800">Agente de Código Inteligente</h4>
+            </div>
+            <p className="text-gray-700 mb-3">
+              Delegue tarefas completas ao agente GitHub Copilot que planeja, escreve, testa e itera
+              código automaticamente usando GitHub Actions.
+            </p>
+            <div className="bg-green-100 border border-green-200 rounded p-3">
+              <strong className="text-green-800">Impacto para SHMS:</strong> Acelera desenvolvimento
+              de funcionalidades complexas através de automação inteligente de tarefas.
+            </div>
+          </div>
+
+          {/* Múltiplos Modelos */}
+          <div className="bg-white border border-gray-200 rounded-lg p-5">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="text-2xl">🧠</div>
+              <h4 className="text-lg font-bold text-purple-800">Múltiplos Modelos de IA</h4>
+            </div>
+            <p className="text-gray-700 mb-3">
+              Acesso a diferentes modelos de IA (Claude 3.5 Sonnet, GPT-4.1, Gemini 2.0) conforme a
+              necessidade específica da tarefa.
+            </p>
+            <div className="space-y-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <span className="text-purple-500">⚡</span>
+                <span>Claude 3.5 Sonnet para análise de código</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-purple-500">🎯</span>
+                <span>GPT-4.1 para tarefas específicas</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-purple-500">🚀</span>
+                <span>Gemini 2.0 Flash para velocidade</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Code Review Automatizado */}
+          <div className="bg-white border border-gray-200 rounded-lg p-5">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="text-2xl">🔍</div>
+              <h4 className="text-lg font-bold text-purple-800">Code Review Automatizado</h4>
+            </div>
+            <p className="text-gray-700 mb-3">
+              Análise automatizada de código antes da revisão humana, detectando bugs ocultos,
+              vulnerabilidades e sugerindo melhorias.
+            </p>
+            <div className="bg-green-100 border border-green-200 rounded p-3">
+              <strong className="text-green-800">Benefício:</strong> Reduz significativamente o
+              tempo de code review e melhora a qualidade do código SHMS.
+            </div>
+          </div>
+
+          {/* Segurança Inteligente */}
+          <div className="bg-white border border-gray-200 rounded-lg p-5">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="text-2xl">🛡️</div>
+              <h4 className="text-lg font-bold text-purple-800">Segurança Inteligente</h4>
+            </div>
+            <p className="text-gray-700 mb-3">
+              Filtros avançados que detectam vulnerabilidades, código duplicado e padrões inseguros
+              em tempo real durante desenvolvimento.
+            </p>
+            <div className="space-y-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <span className="text-red-500">🔒</span>
+                <span>Detecção de vulnerabilidades em tempo real</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-red-500">🔍</span>
+                <span>Identificação de código duplicado</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-red-500">⚠️</span>
+                <span>Filtros contra padrões inseguros</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Comparação GitHub vs GitLab */}
@@ -198,6 +282,25 @@ const AISection: React.FC = () => {
                   <span className="text-green-500 mt-1">✓</span>
                   <span>
                     <strong>Ecosystem maduro</strong> para desenvolvimento Microsoft
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>
+                    <strong>Agente de código</strong> para delegação automática de tarefas
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>
+                    <strong>Múltiplos modelos de IA</strong> (Claude, GPT, Gemini) conforme
+                    necessidade
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>
+                    <strong>Code review automatizado</strong> com detecção avançada de bugs
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
@@ -235,7 +338,7 @@ const AISection: React.FC = () => {
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">✓</span>
                   <span>
-                    <strong>Custo:</strong> Incluído nos planos EE
+                    <strong>Custo:</strong> Pro Premium R$ 214,50/usuário/mês
                   </span>
                 </li>
               </ul>
@@ -253,8 +356,8 @@ const AISection: React.FC = () => {
           >
             Documentação Microsoft GitHub Copilot
           </a>{' '}
-          | GitHub Copilot oficial ($19/mês Business, $39/mês Enterprise) | GitLab Duo incluído nos
-          planos pagos | Conversão: 1 USD = 5,50 BRL
+          | GitHub Copilot oficial ($19/mês Business, $39/mês Enterprise) | GitLab Duo Pro ($19/mês
+          Standard, $39/mês Premium) | Conversão: 1 USD = 5,50 BRL
         </div>
       </div>
 
@@ -272,10 +375,12 @@ const AISection: React.FC = () => {
               </h4>
               <p className="text-gray-700 text-base leading-relaxed">
                 Para o contexto específico do <strong>SHMS e modernização .NET Framework</strong>, o
-                GitHub Copilot oferece vantagens técnicas decisivas. Suas ferramentas especializadas
-                para migração .NET, geração automatizada de testes e integração com Visual Studio
-                proporcionam um <strong>ROI superior</strong> comparado ao GitLab Duo, que possui
-                foco em DevSecOps sem ferramentas específicas para modernização de código.
+                GitHub Copilot oferece vantagens técnicas decisivas. Com{' '}
+                <strong>preços equivalentes</strong>
+                ao GitLab Duo Pro, suas ferramentas especializadas para migração .NET, geração
+                automatizada de testes e integração com Visual Studio proporcionam um{' '}
+                <strong>ROI superior</strong>
+                para modernização de código comparado ao GitLab Duo, que possui foco em DevSecOps.
               </p>
             </div>
 

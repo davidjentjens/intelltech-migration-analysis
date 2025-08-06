@@ -16,6 +16,17 @@ const AICard: React.FC<AICardProps> = ({ platform, data }) => {
   const borderColor = isGitHub ? 'border-gray-900' : 'border-orange-500';
   const platformName = isGitHub ? 'GitHub Copilot' : 'GitLab Duo';
 
+  // Function to render text with bold markdown
+  const renderTextWithBold = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={index}>{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
+
   return (
     <div className={`w-full bg-white rounded-lg border-2 ${borderColor} shadow-lg overflow-hidden`}>
       {/* Colored Header with Zap, Platform Name, and Tags */}
@@ -39,11 +50,34 @@ const AICard: React.FC<AICardProps> = ({ platform, data }) => {
       {/* Card Content */}
       <div className="p-4">
         <div className="space-y-1 mb-3">
-          {data.tools.map((tool, index) => (
-            <div key={index} className="text-xs bg-purple-50 px-2 py-1 rounded">
-              {tool}
-            </div>
-          ))}
+          {data.tools.map((tool, index) => {
+            // Determine if this is a negative aspect
+            const isNegative =
+              tool.includes('menos maduro') ||
+              tool.includes('limitados') ||
+              tool.includes('específicas');
+
+            let bgColor, textColor;
+
+            if (isNegative) {
+              // Negative aspects → Red
+              bgColor = 'bg-red-50';
+              textColor = 'text-red-800';
+            } else {
+              // All positive aspects (both GitHub and GitLab) → Green
+              bgColor = 'bg-green-50';
+              textColor = 'text-green-800';
+            }
+
+            return (
+              <div
+                key={index}
+                className={`text-xs ${bgColor} ${textColor} px-2 py-1 rounded font-medium`}
+              >
+                {renderTextWithBold(tool)}
+              </div>
+            );
+          })}
         </div>
         <div className="text-xs text-purple-600 bg-purple-50 p-2 rounded">
           <strong>Fonte:</strong> {data.fonte}
