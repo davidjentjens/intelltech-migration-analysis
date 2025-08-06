@@ -39,13 +39,13 @@ const ComparisonPage: React.FC = () => {
               priority
             />
           </div>
-          
+
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
             Análise Estratégica: GitHub vs GitLab / Self-Hosted vs Cloud + IA
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Comparativo detalhado das opções de versionamento considerando custos, recursos de IA, 
-            e adequação para arquiteturas .NET legadas
+            Comparativo detalhado das opções de versionamento considerando custos, recursos de IA, e
+            adequação para arquiteturas .NET legadas
           </p>
         </div>
 
@@ -53,14 +53,13 @@ const ComparisonPage: React.FC = () => {
         <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
 
         {/* Content based on active tab */}
-        <div className="flex justify-center">
-          {renderContent()}
-        </div>
+        <div className="flex justify-center">{renderContent()}</div>
 
         {/* Footer */}
         <div className="mt-8 text-center text-gray-600">
           <p className="text-sm">
-            Análise baseada em dados de mercado atualizados (Agosto 2025) e especificidades da arquitetura .NET da empresa.
+            Análise baseada em dados de mercado atualizados (Agosto 2025) e especificidades da
+            arquitetura .NET da empresa.
           </p>
         </div>
       </div>

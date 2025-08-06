@@ -16,12 +16,8 @@ const AICard: React.FC<AICardProps> = ({ platform, data }) => (
       <Zap className="w-5 h-5 text-purple-600" />
       <h4 className="font-semibold">{platform}</h4>
       <div className="ml-auto flex gap-2">
-        <div className="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">
-          CLOUD ONLY
-        </div>
-        <div className="bg-purple-100 px-2 py-1 rounded text-xs font-bold">
-          {data.rating}/10
-        </div>
+        <div className="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">CLOUD ONLY</div>
+        <div className="bg-purple-100 px-2 py-1 rounded text-xs font-bold">{data.rating}/10</div>
       </div>
     </div>
     <div className="space-y-1 mb-3">
@@ -37,4 +33,4 @@ const AICard: React.FC<AICardProps> = ({ platform, data }) => (
   </div>
 );
 
-export default AICard; 
+export default AICard;

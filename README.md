@@ -19,12 +19,14 @@ src/
 ### 🔧 Components
 
 #### Core Components
+
 - **CostCard**: Displays cost comparison information
 - **AICard**: Displays AI/ML capabilities comparison
 - **PlatformCard**: Comprehensive platform comparison card
 - **TabNavigation**: Tab-based navigation component
 
 #### Section Components
+
 - **OverviewSection**: Main comparison overview
 - **CostsSection**: Detailed cost analysis
 - **AISection**: AI/ML capabilities analysis
@@ -32,6 +34,7 @@ src/
 ### 📊 Data Structure
 
 #### Types (`src/types/index.ts`)
+
 - `SpreadsheetData`: Original spreadsheet data structure
 - `CostData`: Cost information interface
 - `ResearchData`: Research data structure
@@ -39,17 +42,20 @@ src/
 - `TabItem`: Navigation tab interface
 
 #### Data Files
+
 - `spreadsheetData.ts`: Original spreadsheet data
 - `researchData.ts`: Market research and pricing data
 
 ## 🚀 Features
 
 ### 📈 Comparison Areas
+
 1. **Overview**: Side-by-side platform comparison
 2. **Costs**: Detailed cost analysis for 47 users
 3. **AI Resources**: GitHub Copilot vs GitLab Duo comparison
 
 ### 🎯 Key Insights
+
 - **GitHub Enterprise Cloud**: Recommended option
 - **Cost Analysis**: Detailed breakdown for enterprise plans
 - **AI Integration**: Focus on .NET development capabilities
@@ -57,20 +63,24 @@ src/
 ## 🛠️ Development
 
 ### Prerequisites
+
 - Node.js 18+
 - npm or yarn
 
 ### Installation
+
 ```bash
 npm install
 ```
 
 ### Running the Application
+
 ```bash
 npm run dev
 ```
 
 ### Building for Production
+
 ```bash
 npm run build
 ```
@@ -78,12 +88,14 @@ npm run build
 ## 📋 Data Sources
 
 ### Pricing Information
+
 - GitLab Ultimate: $99/user/month
 - GitHub Enterprise Cloud: $21/user/month
 - GitHub Copilot Enterprise: $39/user/month
 - Exchange rate: 1 USD = 5.50 BRL
 
 ### Research Basis
+
 - 47 enterprise users
 - .NET Framework to .NET Core migration focus
 - Enterprise security requirements
@@ -92,11 +104,13 @@ npm run build
 ## 🎨 UI/UX Features
 
 ### Responsive Design
+
 - Mobile-friendly layout
 - Horizontal scrolling for comparison cards
 - Tab-based navigation
 
 ### Visual Indicators
+
 - Color-coded platform cards (GitLab: Orange, GitHub: Gray)
 - Rating systems for AI capabilities
 - Cost comparison with detailed breakdowns

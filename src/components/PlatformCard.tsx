@@ -19,7 +19,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
   advantages,
   disadvantages,
   cost,
-  recommended = false
+  recommended = false,
 }) => {
   const isGitLab = provider === 'gitlab';
   const borderColor = isGitLab ? 'border-orange-500' : 'border-gray-900';
@@ -27,7 +27,9 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
   const Icon = type === 'cloud' ? Cloud : Server;
 
   return (
-    <div className={`w-full bg-white rounded-lg shadow-lg overflow-hidden border-2 ${borderColor} h-full`}>
+    <div
+      className={`w-full bg-white rounded-lg shadow-lg overflow-hidden border-2 ${borderColor} h-full`}
+    >
       <div className={`${bgColor} text-white p-4 flex items-center gap-2`}>
         <Icon className="w-6 h-6" />
         <h3 className="font-bold text-lg">{name}</h3>
@@ -53,7 +55,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
             ))}
           </div>
         </div>
-        
+
         {/* Desvantagens */}
         <div className="border-t pt-4">
           <h4 className="font-semibold text-red-700 mb-3 flex items-center gap-2">
@@ -69,7 +71,7 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
             ))}
           </div>
         </div>
-        
+
         {/* Custo Total */}
         <div className="bg-green-50 border border-green-200 rounded p-3">
           <div className="flex items-center gap-2 mb-2">
@@ -77,8 +79,12 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
             <span className="font-semibold text-green-800">Custo Total</span>
           </div>
           <div className="text-sm text-green-700">
-            <div><strong>Mensal:</strong> {cost.mensal}</div>
-            <div><strong>Anual:</strong> {cost.anual}</div>
+            <div>
+              <strong>Mensal:</strong> {cost.mensal}
+            </div>
+            <div>
+              <strong>Anual:</strong> {cost.anual}
+            </div>
           </div>
         </div>
       </div>
@@ -86,4 +92,4 @@ const PlatformCard: React.FC<PlatformCardProps> = ({
   );
 };
 
-export default PlatformCard; 
+export default PlatformCard;

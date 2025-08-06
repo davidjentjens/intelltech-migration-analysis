@@ -1,2 +1,2 @@
 export { spreadsheetData } from './spreadsheetData';
-export { researchData } from './researchData'; 
+export { researchData } from './researchData';
