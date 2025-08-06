@@ -418,5 +418,11 @@
     "portuguese": "Português",
     "english": "English",
     "tip": "Dica"
+  },
+  "responsive": {
+    "title": "Aplicação Disponível Apenas em Desktop",
+    "message": "Esta análise comparativa foi desenvolvida para visualização em telas maiores, proporcionando uma experiência otimizada para análise detalhada dos dados e comparações técnicas.",
+    "recommendation": "Para melhor experiência, acesse em um computador ou tablet em modo paisagem.",
+    "minWidth": "Largura mínima recomendada: 1024px"
   }
 }
