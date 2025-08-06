@@ -58,7 +58,9 @@ const AICard: React.FC<AICardProps> = ({ platform, data }) => {
             const isNegative =
               tool.includes('menos maduro') ||
               tool.includes('limitados') ||
-              tool.includes('específicas');
+              tool.includes('específicas') ||
+              tool.includes('elevado') ||
+              tool.includes('Custo total muito');
 
             let bgColor, textColor;
 

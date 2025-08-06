@@ -61,6 +61,7 @@ export const spreadsheetData: SpreadsheetData = {
       '**Aproveita migração já iniciada**',
       'Controle total dos dados',
       'Recursos GitHub Enterprise completos',
+      'Custo operacional otimizado',
       '**Ecossistema maduro para desenvolvimento .NET**',
     ],
     // GitHub Options - Cloud
@@ -75,6 +76,7 @@ export const spreadsheetData: SpreadsheetData = {
       'Infraestrutura totalmente gerenciada',
       'Atualizações automáticas da plataforma',
       '**Aproveita migração já iniciada**',
+      'Custo operacional otimizado',
       '**Ferramentas de IA líderes de mercado**',
       '**Ecossistema maduro para desenvolvimento .NET**',
       '**Migração assistida .NET Framework → .NET Core**',

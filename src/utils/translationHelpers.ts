@@ -82,6 +82,8 @@ const aiToolsTranslations: Record<string, string> = {
   'Integração nativa com LDAP/SAML para controle': 'ai.tools.gitlab.ldapSamlIntegration',
   'Ecosystem menos maduro para .NET': 'ai.tools.gitlab.lessMatture',
   'Sem ferramentas específicas de modernização': 'ai.tools.gitlab.noModernizationTools',
+  // High total cost comparison (dynamic with cost data)
+  'Custo total muito elevado: GitLab EE Ultimate + Duo': 'ai.tools.gitlab.highTotalCost',
 };
 
 export const translateAdvantageOrDisadvantage = (text: string, t: TFunction): string => {
@@ -100,6 +102,19 @@ export const translateAITool = (text: string, t: TFunction): string => {
 
   if (translationKey) {
     return t(translationKey);
+  }
+
+  // Handle dynamic cost comparison text
+  if (text.includes('Custo total muito elevado: GitLab EE Ultimate + Duo')) {
+    const costMatch = text.match(/\((.*?)\) vs GitHub EE \+ Copilot \((.*?)\)/);
+    if (costMatch) {
+      const gitlabCost = costMatch[1];
+      const githubCost = costMatch[2];
+      return (
+        t('ai.tools.gitlab.highTotalCost') + ` (GitLab: ${gitlabCost} vs GitHub: ${githubCost})`
+      );
+    }
+    return t('ai.tools.gitlab.highTotalCost');
   }
 
   // If no translation found, return the original text

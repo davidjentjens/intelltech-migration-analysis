@@ -314,6 +314,7 @@ export const researchData: ResearchData = {
         'Resolução automática de vulnerabilidades',
         'Integração nativa com LDAP/SAML para controle',
         '**Investimento adicional obrigatório**',
+        `**Custo total muito elevado: GitLab EE Ultimate + Duo (${formatMonthlyCost(costData.gitlab_ee_ultimate_cloud_duo_pro.totalMensal)}/mês) vs GitHub EE + Copilot (${formatMonthlyCost(costData.github_ee_cloud_copilot.totalMensal)}/mês)**`,
         'Ecosystem menos maduro para .NET',
         'Sem ferramentas específicas de modernização',
       ],

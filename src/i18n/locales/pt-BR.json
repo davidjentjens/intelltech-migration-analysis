@@ -271,7 +271,8 @@
         "seatManagement": "Gestão automática de seats e permissões",
         "ldapSamlIntegration": "Integração nativa com LDAP/SAML para controle",
         "lessMatture": "Ecosystem menos maduro para .NET",
-        "noModernizationTools": "Sem ferramentas específicas de modernização"
+        "noModernizationTools": "Sem ferramentas específicas de modernização",
+        "highTotalCost": "**Custo total muito elevado comparado ao GitHub**"
       }
     }
   },
