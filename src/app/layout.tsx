@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Análise de Migração Git - Intelltech',
-  description: 'Análise comparativa entre GitLab e GitHub para migração de plataforma de versionamento de código',
+  description:
+    'Análise comparativa entre GitLab e GitHub para migração de plataforma de versionamento de código',
 };
 
 export default function RootLayout({
