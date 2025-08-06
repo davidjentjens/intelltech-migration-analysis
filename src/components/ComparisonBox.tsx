@@ -235,7 +235,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             {disadvantages.map((item, index) => (
               <div key={index} className="flex items-start gap-2">
                 <XCircle className="w-3 h-3 text-red-600 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-700">{item}</span>
+                <span className="text-sm text-gray-700">{renderTextWithBold(item)}</span>
               </div>
             ))}
           </div>
