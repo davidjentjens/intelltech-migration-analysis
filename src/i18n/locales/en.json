@@ -13,6 +13,7 @@
     "deploymentType": "Deployment Type",
     "selfHosted": "Self-hosted",
     "cloud": "Cloud",
+    "recommended": "RECOMMENDED",
     "advantages": "Advantages",
     "disadvantages": "Disadvantages",
     "recommendation": {

@@ -21,7 +21,7 @@ interface ComparisonBoxProps {
 
 const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
   const { t } = useTranslation();
-  const [deploymentType, setDeploymentType] = useState<'onpremises' | 'cloud'>('onpremises');
+  const [deploymentType, setDeploymentType] = useState<'onpremises' | 'cloud'>('cloud');
   const [subtype, setSubtype] = useState<string>('');
 
   const isGitLab = platform === 'gitlab';
@@ -128,6 +128,22 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
           </h4>
           <div className="flex gap-2">
             <button
+              onClick={() => setDeploymentType('cloud')}
+              className={`px-3 py-1 rounded text-sm flex items-center gap-1 cursor-pointer relative ${
+                deploymentType === 'cloud'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              <Cloud className="w-4 h-4" />
+              {t('overview.cloud')}
+              {!isGitLab && (
+                <span className="ml-1 px-2 py-1 bg-yellow-400 text-gray-900 text-xs rounded font-bold">
+                  {t('overview.recommended')}
+                </span>
+              )}
+            </button>
+            <button
               onClick={() => setDeploymentType('onpremises')}
               className={`px-3 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
                 deploymentType === 'onpremises'
@@ -137,17 +153,6 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             >
               <Server className="w-4 h-4" />
               {t('overview.selfHosted')}
-            </button>
-            <button
-              onClick={() => setDeploymentType('cloud')}
-              className={`px-3 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
-                deploymentType === 'cloud'
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
-            >
-              <Cloud className="w-4 h-4" />
-              {t('overview.cloud')}
             </button>
           </div>
 
@@ -177,13 +182,18 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
               <button
                 key={option.key}
                 onClick={() => setSubtype(option.key)}
-                className={`px-3 py-1 rounded text-sm cursor-pointer ${
+                className={`px-3 py-1 rounded text-sm cursor-pointer relative flex items-center gap-1 ${
                   subtype === option.key
                     ? 'bg-green-600 text-white'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
-                {option.label}
+                <span>{option.label}</span>
+                {!isGitLab && option.key === 'github_ee_cloud_copilot' && (
+                  <span className="ml-1 px-2 py-1 bg-yellow-400 text-gray-900 text-xs rounded font-bold">
+                    {t('overview.recommended')}
+                  </span>
+                )}
               </button>
             ))}
           </div>
