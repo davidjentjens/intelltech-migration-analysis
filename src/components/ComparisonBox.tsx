@@ -114,7 +114,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
           <div className="flex gap-2">
             <button
               onClick={() => setDeploymentType('onpremises')}
-              className={`px-3 py-1 rounded text-sm flex items-center gap-1 ${
+              className={`px-3 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
                 deploymentType === 'onpremises'
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -125,7 +125,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             </button>
             <button
               onClick={() => setDeploymentType('cloud')}
-              className={`px-3 py-1 rounded text-sm flex items-center gap-1 ${
+              className={`px-3 py-1 rounded text-sm flex items-center gap-1 cursor-pointer ${
                 deploymentType === 'cloud'
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -162,7 +162,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
               <button
                 key={option.key}
                 onClick={() => setSubtype(option.key)}
-                className={`px-3 py-1 rounded text-sm ${
+                className={`px-3 py-1 rounded text-sm cursor-pointer ${
                   subtype === option.key
                     ? 'bg-green-600 text-white'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'

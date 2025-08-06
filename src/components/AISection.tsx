@@ -27,26 +27,24 @@ const AISection: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {aiCards.map((card, index) => (
-          <div key={index} className="w-full">
-            <AICard platform={card.platform} data={card.data} />
-          </div>
+          <AICard key={index} platform={card.platform} data={card.data} />
         ))}
       </div>
 
       {/* Benefícios Detalhados do GitHub Copilot */}
-      <div className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6">
+      <div className="border-2 border-gray-900 rounded-lg p-6">
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-purple-800 mb-2">
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
             🤖 GitHub Copilot para Modernização do SHMS
           </h3>
-          <p className="text-purple-700 text-lg">
+          <p className="text-gray-700 text-lg">
             Ferramentas avançadas de IA que aceleram a modernização e melhorias de código
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Migração Assistida */}
-          <div className="bg-white border border-purple-300 rounded-lg p-5">
+          <div className="bg-white border border-gray-200 rounded-lg p-5">
             <div className="flex items-center gap-3 mb-3">
               <div className="text-2xl">🚀</div>
               <h4 className="text-lg font-bold text-purple-800">
@@ -78,7 +76,7 @@ const AISection: React.FC = () => {
           </div>
 
           {/* Geração de Testes */}
-          <div className="bg-white border border-purple-300 rounded-lg p-5">
+          <div className="bg-white border border-gray-200 rounded-lg p-5">
             <div className="flex items-center gap-3 mb-3">
               <div className="text-2xl">🧪</div>
               <h4 className="text-lg font-bold text-purple-800">
@@ -110,7 +108,7 @@ const AISection: React.FC = () => {
           </div>
 
           {/* Patterns Modernos */}
-          <div className="bg-white border border-purple-300 rounded-lg p-5">
+          <div className="bg-white border border-gray-200 rounded-lg p-5">
             <div className="flex items-center gap-3 mb-3">
               <div className="text-2xl">⚡</div>
               <h4 className="text-lg font-bold text-purple-800">
@@ -142,7 +140,7 @@ const AISection: React.FC = () => {
           </div>
 
           {/* Integração Azure */}
-          <div className="bg-white border border-purple-300 rounded-lg p-5">
+          <div className="bg-white border border-gray-200 rounded-lg p-5">
             <div className="flex items-center gap-3 mb-3">
               <div className="text-2xl">☁️</div>
               <h4 className="text-lg font-bold text-purple-800">Integração com Azure Services</h4>
@@ -173,7 +171,7 @@ const AISection: React.FC = () => {
         </div>
 
         {/* Comparação GitHub vs GitLab */}
-        <div className="bg-white border border-purple-300 rounded-lg p-5">
+        <div className="bg-white border border-gray-200 rounded-lg p-5">
           <h4 className="text-lg font-bold text-purple-800 mb-4 text-center">
             📊 Comparação de Ecosistemas IA
           </h4>
