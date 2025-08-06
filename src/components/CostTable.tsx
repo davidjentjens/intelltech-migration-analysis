@@ -228,7 +228,7 @@ const CostTable: React.FC = () => {
   return (
     <div className="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-6">
       <h2 className="text-2xl font-bold text-yellow-800 mb-4 text-center">
-        💰 Comparativo de Custos Anuais (47 usuários)
+        {t('overview.costComparisonTitle')}
       </h2>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">

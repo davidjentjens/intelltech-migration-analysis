@@ -10,6 +10,7 @@
     "title": "Comparative Analysis of Git Platforms",
     "subtitle": "Detailed comparison between GitLab and GitHub for SHMS modernization",
     "costComparison": "Cost Comparison",
+    "costComparisonTitle": "💰 Annual Cost Comparison (47 users + 30 AI users)",
     "deploymentType": "Deployment Type",
     "selfHosted": "Self-hosted",
     "cloud": "Cloud",
