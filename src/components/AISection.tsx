@@ -268,7 +268,7 @@ const AISection: React.FC = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white border border-purple-300 rounded-lg p-6 mb-4">
               <h4 className="font-bold text-purple-800 mb-3 text-lg">
-                🤖 GitHub Copilot Enterprise para Modernização .NET
+                🤖 GitHub Copilot Enterprise (CLOUD) para Modernização .NET
               </h4>
               <p className="text-gray-700 text-base leading-relaxed">
                 Para o contexto específico do <strong>SHMS e modernização .NET Framework</strong>, o
