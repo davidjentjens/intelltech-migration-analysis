@@ -1,0 +1,215 @@
+{
+  "appTitle": "Git Migration Analysis - Intelltech",
+  "appDescription": "Comparative analysis between GitLab and GitHub for version control platform migration",
+  "navigation": {
+    "overview": "Overview",
+    "ai": "AI Resources",
+    "security": "Security"
+  },
+  "overview": {
+    "title": "Comparative Analysis of Git Platforms",
+    "subtitle": "Detailed comparison between GitLab and GitHub for SHMS modernization",
+    "costComparison": "Cost Comparison",
+    "deploymentType": "Deployment Type",
+    "selfHosted": "Self-hosted",
+    "cloud": "Cloud",
+    "advantages": "Advantages",
+    "disadvantages": "Disadvantages",
+    "recommendation": {
+      "title": "Development Team Strategic Recommendation",
+      "subtitle": "GitHub Enterprise Cloud",
+      "description": "Proceeding with GitHub Enterprise Cloud represents the most balanced strategic decision. It maximizes the investment already made, offers proven superiority of AI tools for .NET modernization, and eliminates operational overhead identified by the internal team.",
+      "basis": "Recommendation Basis",
+      "basisDescription": "This analysis was conducted by the development team, considering technical, operational and strategic aspects of the migration, focusing on the continuity of the project already started and the modernization needs of SHMS."
+    },
+    "deploymentExplanation": {
+      "selfHosted": "Installation on dedicated VM in Oracle Cloud (4 vCPU, 16GB RAM, 100GB storage)",
+      "cloud": "Managed service by the platform (GitHub.com or GitLab.com)"
+    }
+  },
+  "costs": {
+    "table": {
+      "platform": "Platform",
+      "licensesMonthly": "Licenses (Monthly)",
+      "infrastructureMonthly": "Infrastructure (Monthly)",
+      "totalMonthly": "Total (Monthly)",
+      "licensesAnnual": "Licenses (Annual)",
+      "infrastructureAnnual": "Infrastructure (Annual)",
+      "totalAnnual": "Total (Annual)",
+      "vmSpecs": "VM Specifications"
+    },
+    "platforms": {
+      "gitlabCESelfHosted": "GitLab CE (Self-hosted)",
+      "gitlabEEPremiumSelfHosted": "GitLab EE Premium (Self-hosted)",
+      "gitlabEEUltimateSelfHosted": "GitLab EE Ultimate (Self-hosted)",
+      "gitlabEEPremiumCloud": "GitLab EE Premium (Cloud)",
+      "gitlabEEUltimateCloud": "GitLab EE Ultimate (Cloud)",
+      "githubEESelfHosted": "GitHub EE (Self-hosted)",
+      "githubEECloud": "GitHub EE (Cloud)",
+      "githubEECloudCopilot": "GitHub EE + Copilot (Cloud)"
+    },
+    "tooltip": "Click on column headers to sort the data."
+  },
+  "ai": {
+    "title": "Artificial Intelligence Resources",
+    "subtitle": "Detailed analysis of available AI tools",
+    "copilotBenefits": "GitHub Copilot for SHMS Modernization",
+    "copilotDescription": "Advanced AI tools that accelerate modernization and code improvements",
+    "migrationAssisted": {
+      "title": "Assisted Migration .NET Framework → .NET Core",
+      "description": "GitHub Copilot offers specialized tools to modernize .NET Framework applications to .NET Core, including:",
+      "benefits": {
+        "apiConversion": "Automatic conversion of obsolete APIs",
+        "dependencyAnalysis": "Intelligent dependency analysis",
+        "modernPatterns": "Suggestions for modern patterns",
+        "compatibilityCheck": "Compatibility verification"
+      },
+      "impact": "Significantly reduces the time required for manual migration of SHMS code."
+    },
+    "unitTests": {
+      "title": "Automated Unit Test Generation",
+      "description": "Intelligent creation of unit tests based on existing code context:",
+      "benefits": {
+        "comprehensiveTests": "Comprehensive tests for critical scenarios",
+        "edgeCases": "Edge case coverage",
+        "mockGeneration": "Automatic mock generation",
+        "testPatterns": "Application of test patterns"
+      },
+      "impact": "Significantly accelerates test creation for SHMS."
+    },
+    "codeAgent": {
+      "title": "Intelligent Code Agent",
+      "description": "Delegate complete tasks to the GitHub Copilot agent that plans, writes, tests and iterates code automatically using GitHub Actions.",
+      "impact": "Accelerates development of complex functionalities through intelligent task automation."
+    },
+    "multipleModels": {
+      "title": "Multiple AI Models",
+      "description": "Access to different AI models (Claude 3.5 Sonnet, GPT-4.1, Gemini 2.0) according to the specific task needs.",
+      "models": {
+        "claude": "Claude 3.5 Sonnet for code analysis",
+        "gpt": "GPT-4.1 for specific tasks",
+        "gemini": "Gemini 2.0 Flash for speed"
+      }
+    },
+    "codeReview": {
+      "title": "Automated Code Review",
+      "description": "Automated code analysis before human review, detecting hidden bugs, vulnerabilities and suggesting improvements.",
+      "benefit": "Significantly reduces code review time and improves SHMS code quality."
+    },
+    "intelligentSecurity": {
+      "title": "Intelligent Security",
+      "description": "Advanced filters that detect vulnerabilities, duplicate code and insecure patterns in real-time during development.",
+      "features": {
+        "realTimeDetection": "Real-time vulnerability detection",
+        "duplicateCode": "Duplicate code identification",
+        "insecurePatterns": "Filters against insecure patterns"
+      }
+    },
+    "comparison": {
+      "title": "AI Ecosystems Comparison",
+      "githubTitle": "GitHub Copilot",
+      "gitlabTitle": "GitLab Duo",
+      "cost": "Cost",
+      "specificTools": "Specific tools for .NET modernization",
+      "matureEcosystem": "Mature ecosystem for Microsoft development",
+      "codeAgent": "Code agent for automatic task delegation",
+      "multipleModels": "Multiple AI models as needed",
+      "automatedReview": "Automated code review with advanced bug detection",
+      "warningNoAI": "NO AI resources (Cloud only)"
+    },
+    "recommendation": {
+      "title": "AI Resources Recommendation",
+      "subtitle": "GitHub Copilot Enterprise for .NET Modernization",
+      "description": "For the specific context of SHMS and .NET Framework modernization, GitHub Copilot offers decisive technical advantages. With equivalent prices to GitLab Duo Pro, its specialized tools for .NET migration, automated test generation and Visual Studio integration provide superior ROI for code modernization compared to GitLab Duo, which focuses on DevSecOps.",
+      "technicalJustification": "Technical Justification",
+      "technicalDescription": "Analysis based on GitHub Copilot's superiority for .NET development, native integration with Azure services, and specific tools for legacy application modernization - critical factors for the success of SHMS evolution."
+    },
+    "sources": "Sources"
+  },
+  "security": {
+    "title": "Information Security Analysis",
+    "scope": {
+      "title": "IS Analysis Scope",
+      "description": "This analysis focuses on On-Premises solutions. Cloud options were not evaluated by the Information Security team.",
+      "documentTitle": "Complete Document Available",
+      "documentDescription": "Access the detailed technical analysis from the Information Security team with all criteria, evaluations and specific recommendations.",
+      "viewPDF": "View Complete PDF"
+    },
+    "matrix": {
+      "title": "Comparative Security Matrix",
+      "criteria": "Criteria",
+      "gitlabCE": "GitLab CE",
+      "gitlabEE": "GitLab EE Ultimate",
+      "githubES": "GitHub Enterprise Server",
+      "authentication": "Authentication",
+      "permissions": "Permissions",
+      "auditing": "Auditing",
+      "sast": "SAST",
+      "dast": "DAST",
+      "secretScanning": "Secret Scanning",
+      "dependencyScanning": "Dependency Scanning",
+      "containerScanning": "Container Scanning",
+      "compliance": "Compliance",
+      "backup": "Backup/Restore",
+      "highAvailability": "High Availability",
+      "disasterRecovery": "Disaster Recovery"
+    },
+    "legend": {
+      "title": "Legend",
+      "excellent": "Excellent",
+      "good": "Good",
+      "adequate": "Adequate",
+      "limited": "Limited",
+      "critical": "Critical",
+      "important": "Important",
+      "moderate": "Moderate"
+    },
+    "analysis": {
+      "gitlabCE": {
+        "title": "GitLab Community Edition",
+        "pros": "Positive Points",
+        "cons": "Negative Points",
+        "evaluation": "IS Evaluation"
+      },
+      "gitlabEE": {
+        "title": "GitLab Enterprise Edition Ultimate",
+        "pros": "Positive Points",
+        "cons": "Negative Points",
+        "evaluation": "IS Evaluation"
+      },
+      "githubES": {
+        "title": "GitHub Enterprise Server",
+        "pros": "Positive Points",
+        "cons": "Negative Points",
+        "evaluation": "IS Evaluation",
+        "note": "For GitHub Enterprise Server to be comparable to GitLab EE in security, contracting the \"Advanced Security\" add-on is essential. Without it, the platform does not meet several critical security criteria."
+      }
+    },
+    "recommendations": {
+      "title": "IS Recommendations",
+      "scenario1": {
+        "title": "Scenario 1: Maximum Security Priority",
+        "description": "GitLab EE Ultimate offers the most robust set of integrated security tools."
+      },
+      "scenario2": {
+        "title": "Scenario 2: Cost vs Security Balance",
+        "description": "GitLab CE with external security tools can be a viable option."
+      }
+    }
+  },
+  "common": {
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "users": "users",
+    "month": "month",
+    "year": "year",
+    "currency": "R$",
+    "notAvailable": "N/A",
+    "cloudOnly": "CLOUD ONLY",
+    "aiWarning": "AI resources NOT available in Self-hosted solutions",
+    "aiAvailable": "AI resources available",
+    "language": "Language",
+    "portuguese": "Português",
+    "english": "English"
+  }
+}

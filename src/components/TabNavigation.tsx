@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Settings, Zap, Shield } from 'lucide-react';
 import { TabItem } from '../types';
 
@@ -8,10 +9,12 @@ interface TabNavigationProps {
 }
 
 const TabNavigation: React.FC<TabNavigationProps> = ({ activeTab, onTabChange }) => {
+  const { t } = useTranslation();
+
   const tabs: TabItem[] = [
-    { id: 'overview', label: 'Análise Completa', icon: <Settings className="w-4 h-4" /> },
-    { id: 'ai', label: 'Recursos de IA', icon: <Zap className="w-4 h-4" /> },
-    { id: 'security', label: 'Segurança', icon: <Shield className="w-4 h-4" /> },
+    { id: 'overview', label: t('navigation.overview'), icon: <Settings className="w-4 h-4" /> },
+    { id: 'ai', label: t('navigation.ai'), icon: <Zap className="w-4 h-4" /> },
+    { id: 'security', label: t('navigation.security'), icon: <Shield className="w-4 h-4" /> },
   ];
 
   return (

@@ -7,3 +7,5 @@ export { default as OverviewSection } from './OverviewSection';
 export { default as AISection } from './AISection';
 export { default as SecuritySection } from './SecuritySection';
 export { default as CostTable } from './CostTable';
+export { default as LanguageSelector } from './LanguageSelector';
+export { default as ClientOnly } from './ClientOnly';
