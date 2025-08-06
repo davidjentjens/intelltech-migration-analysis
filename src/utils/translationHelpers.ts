@@ -1,4 +1,4 @@
-import { TFunction } from 'react-i18next';
+import { TFunction } from 'i18next';
 
 // Translation mapping for advantages
 const advantageTranslations: Record<string, string> = {
