@@ -10,74 +10,9 @@ import {
 } from '@tanstack/react-table';
 import { ChevronUp, ChevronDown } from 'lucide-react';
 import { formatMonthlyCost } from '../utils/formatters';
+import { costData } from '../data/researchData';
 
-// Raw cost data (numbers only for proper sorting)
-const costData = {
-  gitlab_ce_onpremises: {
-    licenseMensal: 0,
-    infrastructureMensal: 144,
-    get totalMensal() {
-      return this.licenseMensal + this.infrastructureMensal;
-    },
-    vmSpecs: '4 vCPU 16GB RAM 100GB',
-  },
-  gitlab_ee_premium_onpremises: {
-    licenseMensal: 7482.5,
-    infrastructureMensal: 385,
-    get totalMensal() {
-      return this.licenseMensal + this.infrastructureMensal;
-    },
-    vmSpecs: '8 vCPU 32GB RAM 200GB',
-  },
-  gitlab_ee_ultimate_onpremises: {
-    licenseMensal: 25592.5,
-    infrastructureMensal: 385,
-    get totalMensal() {
-      return this.licenseMensal + this.infrastructureMensal;
-    },
-    vmSpecs: '16 vCPU 64GB RAM 500GB',
-  },
-  gitlab_ee_premium_cloud: {
-    licenseMensal: 7482.5,
-    infrastructureMensal: 0,
-    get totalMensal() {
-      return this.licenseMensal + this.infrastructureMensal;
-    },
-    vmSpecs: 'N/A (Cloud)',
-  },
-  gitlab_ee_ultimate_cloud: {
-    licenseMensal: 25592.5,
-    infrastructureMensal: 0,
-    get totalMensal() {
-      return this.licenseMensal + this.infrastructureMensal;
-    },
-    vmSpecs: 'N/A (Cloud)',
-  },
-  github_ee_onpremises: {
-    licenseMensal: 5423.5,
-    infrastructureMensal: 2926,
-    get totalMensal() {
-      return this.licenseMensal + this.infrastructureMensal;
-    },
-    vmSpecs: '16 vCPU 48-256GB RAM',
-  },
-  github_ee_cloud: {
-    licenseMensal: 5423.5,
-    infrastructureMensal: 0,
-    get totalMensal() {
-      return this.licenseMensal + this.infrastructureMensal;
-    },
-    vmSpecs: 'N/A (Cloud)',
-  },
-  github_ee_cloud_copilot: {
-    licenseMensal: 15510, // ($21 × 47) + ($39 × 47) = $987 + $1833 = $2820 × 5,50 = R$ 15.510
-    infrastructureMensal: 0,
-    get totalMensal() {
-      return this.licenseMensal + this.infrastructureMensal;
-    },
-    vmSpecs: 'N/A (Cloud)',
-  },
-};
+// Raw cost data imported from researchData (numbers only for proper sorting)
 
 type CostRowData = {
   plataforma: string;

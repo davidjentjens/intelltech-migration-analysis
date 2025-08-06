@@ -79,6 +79,9 @@ const costData = {
   },
 };
 
+// Export costData for use in CostTable
+export { costData };
+
 export const researchData: ResearchData = {
   custos: {
     // GitLab Options
