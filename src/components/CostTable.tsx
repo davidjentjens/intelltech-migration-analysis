@@ -23,6 +23,7 @@ type CostRowData = {
   infrastructureAnual: number;
   totalAnual: number;
   vmSpecs: string;
+  calculationDetails: string;
 };
 
 const columnHelper = createColumnHelper<CostRowData>();
@@ -77,6 +78,10 @@ const CostTable: React.FC = () => {
         header: t('costs.table.vmSpecs'),
         cell: (info) => <div className="text-xs">{info.getValue()}</div>,
       }),
+      columnHelper.accessor('calculationDetails', {
+        header: t('costs.table.calculationDetails'),
+        cell: (info) => <div className="text-xs whitespace-pre-line">{info.getValue()}</div>,
+      }),
     ],
     [t]
   );
@@ -93,6 +98,8 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ce_onpremises.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ce_onpremises.totalMensal * 12,
         vmSpecs: costData.gitlab_ce_onpremises.vmSpecs,
+        calculationDetails:
+          'Licença: R$ 0 (gratuita)\nInfraestrutura: R$ 70 × 5,50 = R$ 144\nTotal: R$ 0 + R$ 144 = R$ 144',
       },
       {
         plataforma: t('costs.platforms.gitlabEEPremiumSelfHosted'),
@@ -103,6 +110,8 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ee_premium_onpremises.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ee_premium_onpremises.totalMensal * 12,
         vmSpecs: costData.gitlab_ee_premium_onpremises.vmSpecs,
+        calculationDetails:
+          'Licença: $29 × 47 usuários × 5,50 = R$ 7.482,50\nInfraestrutura: $88 × 5,50 = R$ 488\nTotal: R$ 7.482,50 + R$ 488 = R$ 7.970,50',
       },
       {
         plataforma: t('costs.platforms.gitlabEEUltimateSelfHosted'),
@@ -113,6 +122,8 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ee_ultimate_onpremises.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ee_ultimate_onpremises.totalMensal * 12,
         vmSpecs: costData.gitlab_ee_ultimate_onpremises.vmSpecs,
+        calculationDetails:
+          'Licença: $99 × 47 usuários × 5,50 = R$ 25.592,50\nInfraestrutura: $135 × 5,50 = R$ 742,50\nTotal: R$ 25.592,50 + R$ 742,50 = R$ 26.335',
       },
       {
         plataforma: t('costs.platforms.gitlabEEPremiumCloud'),
@@ -123,6 +134,8 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ee_premium_cloud.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ee_premium_cloud.totalMensal * 12,
         vmSpecs: costData.gitlab_ee_premium_cloud.vmSpecs,
+        calculationDetails:
+          'Licença: $29 × 47 usuários × 5,50 = R$ 7.482,50\nInfraestrutura: R$ 0 (Cloud)\nTotal: R$ 7.482,50',
       },
       {
         plataforma: t('costs.platforms.gitlabEEUltimateCloud'),
@@ -133,6 +146,8 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ee_ultimate_cloud.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ee_ultimate_cloud.totalMensal * 12,
         vmSpecs: costData.gitlab_ee_ultimate_cloud.vmSpecs,
+        calculationDetails:
+          'Licença: $99 × 47 usuários × 5,50 = R$ 25.592,50\nInfraestrutura: R$ 0 (Cloud)\nTotal: R$ 25.592,50',
       },
       {
         plataforma: t('costs.platforms.githubEESelfHosted'),
@@ -143,6 +158,8 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.github_ee_onpremises.infrastructureMensal * 12,
         totalAnual: costData.github_ee_onpremises.totalMensal * 12,
         vmSpecs: costData.github_ee_onpremises.vmSpecs,
+        calculationDetails:
+          'Licença: $21 × 47 usuários × 5,50 = R$ 5.423,50\nInfraestrutura: $532 × 5,50 = R$ 2.926\nTotal: R$ 5.423,50 + R$ 2.926 = R$ 8.349,50',
       },
       {
         plataforma: t('costs.platforms.githubEECloud'),
@@ -153,6 +170,8 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.github_ee_cloud.infrastructureMensal * 12,
         totalAnual: costData.github_ee_cloud.totalMensal * 12,
         vmSpecs: costData.github_ee_cloud.vmSpecs,
+        calculationDetails:
+          'Licença: $21 × 47 usuários × 5,50 = R$ 5.423,50\nInfraestrutura: R$ 0 (Cloud)\nTotal: R$ 5.423,50',
       },
       {
         plataforma: t('costs.platforms.githubEECloudCopilot'),
@@ -163,6 +182,8 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.github_ee_cloud_copilot.infrastructureMensal * 12,
         totalAnual: costData.github_ee_cloud_copilot.totalMensal * 12,
         vmSpecs: costData.github_ee_cloud_copilot.vmSpecs,
+        calculationDetails:
+          'GitHub EE: $21 × 47 = $987\nCopilot: $39 × 30 = $1.170\nTotal USD: $2.157 × 5,50 = R$ 11.863,50',
       },
     ],
     [t]

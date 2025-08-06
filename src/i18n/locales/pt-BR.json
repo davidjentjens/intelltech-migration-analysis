@@ -58,7 +58,8 @@
       "licensesAnnual": "Licenças (Anual)",
       "infrastructureAnnual": "Infraestrutura (Anual)",
       "totalAnnual": "Total (Anual)",
-      "vmSpecs": "Especificações VM"
+      "vmSpecs": "Especificações VM",
+      "calculationDetails": "Detalhes do Cálculo"
     },
     "platforms": {
       "gitlabCESelfHosted": "GitLab CE (Self-hosted)",
