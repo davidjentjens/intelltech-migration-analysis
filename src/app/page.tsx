@@ -92,10 +92,7 @@ const ComparisonPage: React.FC = () => {
 
         {/* Footer */}
         <div className="mt-8 text-center text-gray-600">
-          <p className="text-sm">
-            Análise baseada em dados de mercado atualizados (Agosto 2025) e especificidades da
-            arquitetura .NET da empresa.
-          </p>
+          <p className="text-sm">{t('overview.analysisNote')}</p>
         </div>
       </div>
     </div>

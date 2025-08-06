@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   createColumnHelper,
   flexRender,
@@ -91,53 +92,65 @@ type CostRowData = {
 
 const columnHelper = createColumnHelper<CostRowData>();
 
-const columns = [
-  columnHelper.accessor('plataforma', {
-    header: 'Plataforma',
-    cell: (info) => <div className="font-medium">{info.getValue()}</div>,
-  }),
-  columnHelper.accessor('licenseMensal', {
-    header: 'Licenças (Mensal)',
-    cell: (info) => <div className="text-center py-1">{formatMonthlyCost(info.getValue())}</div>,
-  }),
-  columnHelper.accessor('infrastructureMensal', {
-    header: 'Infraestrutura (Mensal)',
-    cell: (info) => <div className="text-center py-1">{formatMonthlyCost(info.getValue())}</div>,
-  }),
-  columnHelper.accessor('totalMensal', {
-    header: 'Total Mensal',
-    cell: (info) => (
-      <div className="text-center font-semibold">{formatMonthlyCost(info.getValue())}</div>
-    ),
-  }),
-  columnHelper.accessor('licenseAnual', {
-    header: 'Licenças (Anual)',
-    cell: (info) => <div className="text-center py-1">{formatMonthlyCost(info.getValue())}</div>,
-  }),
-  columnHelper.accessor('infrastructureAnual', {
-    header: 'Infraestrutura (Anual)',
-    cell: (info) => <div className="text-center py-1">{formatMonthlyCost(info.getValue())}</div>,
-  }),
-  columnHelper.accessor('totalAnual', {
-    header: 'Total Anual',
-    cell: (info) => (
-      <div className="text-center font-semibold">{formatMonthlyCost(info.getValue())}</div>
-    ),
-  }),
-  columnHelper.accessor('vmSpecs', {
-    header: 'VM Specs',
-    cell: (info) => <div className="text-xs">{info.getValue()}</div>,
-  }),
-];
-
 const CostTable: React.FC = () => {
+  const { t } = useTranslation();
   const [sorting, setSorting] = React.useState<SortingState>([]);
+
+  const columns = React.useMemo(
+    () => [
+      columnHelper.accessor('plataforma', {
+        header: t('costs.table.platform'),
+        cell: (info) => <div className="font-medium">{info.getValue()}</div>,
+      }),
+      columnHelper.accessor('licenseMensal', {
+        header: t('costs.table.licensesMonthly'),
+        cell: (info) => (
+          <div className="text-center py-1">{formatMonthlyCost(info.getValue())}</div>
+        ),
+      }),
+      columnHelper.accessor('infrastructureMensal', {
+        header: t('costs.table.infrastructureMonthly'),
+        cell: (info) => (
+          <div className="text-center py-1">{formatMonthlyCost(info.getValue())}</div>
+        ),
+      }),
+      columnHelper.accessor('totalMensal', {
+        header: t('costs.table.totalMonthly'),
+        cell: (info) => (
+          <div className="text-center font-semibold">{formatMonthlyCost(info.getValue())}</div>
+        ),
+      }),
+      columnHelper.accessor('licenseAnual', {
+        header: t('costs.table.licensesAnnual'),
+        cell: (info) => (
+          <div className="text-center py-1">{formatMonthlyCost(info.getValue())}</div>
+        ),
+      }),
+      columnHelper.accessor('infrastructureAnual', {
+        header: t('costs.table.infrastructureAnnual'),
+        cell: (info) => (
+          <div className="text-center py-1">{formatMonthlyCost(info.getValue())}</div>
+        ),
+      }),
+      columnHelper.accessor('totalAnual', {
+        header: t('costs.table.totalAnnual'),
+        cell: (info) => (
+          <div className="text-center font-semibold">{formatMonthlyCost(info.getValue())}</div>
+        ),
+      }),
+      columnHelper.accessor('vmSpecs', {
+        header: t('costs.table.vmSpecs'),
+        cell: (info) => <div className="text-xs">{info.getValue()}</div>,
+      }),
+    ],
+    [t]
+  );
 
   // Transform research data into table data
   const data: CostRowData[] = React.useMemo(
     () => [
       {
-        plataforma: 'GitLab CE (Self-hosted)',
+        plataforma: t('costs.platforms.gitlabCESelfHosted'),
         licenseMensal: costData.gitlab_ce_onpremises.licenseMensal,
         infrastructureMensal: costData.gitlab_ce_onpremises.infrastructureMensal,
         totalMensal: costData.gitlab_ce_onpremises.totalMensal,
@@ -147,7 +160,7 @@ const CostTable: React.FC = () => {
         vmSpecs: costData.gitlab_ce_onpremises.vmSpecs,
       },
       {
-        plataforma: 'GitLab EE Premium (Self-hosted)',
+        plataforma: t('costs.platforms.gitlabEEPremiumSelfHosted'),
         licenseMensal: costData.gitlab_ee_premium_onpremises.licenseMensal,
         infrastructureMensal: costData.gitlab_ee_premium_onpremises.infrastructureMensal,
         totalMensal: costData.gitlab_ee_premium_onpremises.totalMensal,
@@ -157,7 +170,7 @@ const CostTable: React.FC = () => {
         vmSpecs: costData.gitlab_ee_premium_onpremises.vmSpecs,
       },
       {
-        plataforma: 'GitLab EE Ultimate (Self-hosted)',
+        plataforma: t('costs.platforms.gitlabEEUltimateSelfHosted'),
         licenseMensal: costData.gitlab_ee_ultimate_onpremises.licenseMensal,
         infrastructureMensal: costData.gitlab_ee_ultimate_onpremises.infrastructureMensal,
         totalMensal: costData.gitlab_ee_ultimate_onpremises.totalMensal,
@@ -167,7 +180,7 @@ const CostTable: React.FC = () => {
         vmSpecs: costData.gitlab_ee_ultimate_onpremises.vmSpecs,
       },
       {
-        plataforma: 'GitLab EE Premium (Cloud)',
+        plataforma: t('costs.platforms.gitlabEEPremiumCloud'),
         licenseMensal: costData.gitlab_ee_premium_cloud.licenseMensal,
         infrastructureMensal: costData.gitlab_ee_premium_cloud.infrastructureMensal,
         totalMensal: costData.gitlab_ee_premium_cloud.totalMensal,
@@ -177,7 +190,7 @@ const CostTable: React.FC = () => {
         vmSpecs: costData.gitlab_ee_premium_cloud.vmSpecs,
       },
       {
-        plataforma: 'GitLab EE Ultimate (Cloud)',
+        plataforma: t('costs.platforms.gitlabEEUltimateCloud'),
         licenseMensal: costData.gitlab_ee_ultimate_cloud.licenseMensal,
         infrastructureMensal: costData.gitlab_ee_ultimate_cloud.infrastructureMensal,
         totalMensal: costData.gitlab_ee_ultimate_cloud.totalMensal,
@@ -187,7 +200,7 @@ const CostTable: React.FC = () => {
         vmSpecs: costData.gitlab_ee_ultimate_cloud.vmSpecs,
       },
       {
-        plataforma: 'GitHub EE (Self-hosted)',
+        plataforma: t('costs.platforms.githubEESelfHosted'),
         licenseMensal: costData.github_ee_onpremises.licenseMensal,
         infrastructureMensal: costData.github_ee_onpremises.infrastructureMensal,
         totalMensal: costData.github_ee_onpremises.totalMensal,
@@ -197,7 +210,7 @@ const CostTable: React.FC = () => {
         vmSpecs: costData.github_ee_onpremises.vmSpecs,
       },
       {
-        plataforma: 'GitHub EE (Cloud)',
+        plataforma: t('costs.platforms.githubEECloud'),
         licenseMensal: costData.github_ee_cloud.licenseMensal,
         infrastructureMensal: costData.github_ee_cloud.infrastructureMensal,
         totalMensal: costData.github_ee_cloud.totalMensal,
@@ -207,7 +220,7 @@ const CostTable: React.FC = () => {
         vmSpecs: costData.github_ee_cloud.vmSpecs,
       },
       {
-        plataforma: 'GitHub EE + Copilot (Cloud)',
+        plataforma: t('costs.platforms.githubEECloudCopilot'),
         licenseMensal: costData.github_ee_cloud_copilot.licenseMensal,
         infrastructureMensal: costData.github_ee_cloud_copilot.infrastructureMensal,
         totalMensal: costData.github_ee_cloud_copilot.totalMensal,
@@ -217,7 +230,7 @@ const CostTable: React.FC = () => {
         vmSpecs: costData.github_ee_cloud_copilot.vmSpecs,
       },
     ],
-    []
+    [t]
   );
 
   const table = useReactTable({
@@ -281,7 +294,7 @@ const CostTable: React.FC = () => {
         </table>
       </div>
       <div className="mt-4 text-xs text-yellow-700 bg-yellow-100 p-2 rounded">
-        💡 <strong>Dica:</strong> Clique nos cabeçalhos das colunas para ordenar os dados.
+        💡 <strong>{t('common.tip')}:</strong> {t('costs.tooltip')}
       </div>
     </div>
   );

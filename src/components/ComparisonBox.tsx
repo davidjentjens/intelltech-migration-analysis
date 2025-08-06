@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { CheckCircle, XCircle, DollarSign, Cloud, Server, Zap } from 'lucide-react';
 import { spreadsheetData, researchData } from '../data';
+import { translateAdvantageOrDisadvantage } from '../utils/translationHelpers';
 
 // Helper function to render text with bold markdown
 const renderTextWithBold = (text: string) => {
@@ -18,6 +20,7 @@ interface ComparisonBoxProps {
 }
 
 const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
+  const { t } = useTranslation();
   const [deploymentType, setDeploymentType] = useState<'onpremises' | 'cloud'>('onpremises');
   const [subtype, setSubtype] = useState<string>('');
 
@@ -102,7 +105,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
         <h3 className="font-bold text-lg">{platform === 'gitlab' ? 'GitLab' : 'GitHub'}</h3>
         {platform === 'github' && (
           <div className="ml-auto bg-yellow-400 text-gray-900 px-2 py-1 rounded text-xs font-bold">
-            RECOMENDADO
+            {t('overview.comparison.recommended')}
           </div>
         )}
       </div>
@@ -110,7 +113,9 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
       <div className="p-4 space-y-4">
         {/* Deployment Type Toggle */}
         <div>
-          <h4 className="font-semibold text-gray-700 mb-2">Tipo de Implantação:</h4>
+          <h4 className="font-semibold text-gray-700 mb-2">
+            {t('overview.comparison.deploymentType')}
+          </h4>
           <div className="flex gap-2">
             <button
               onClick={() => setDeploymentType('onpremises')}
@@ -121,7 +126,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
               }`}
             >
               <Server className="w-4 h-4" />
-              Self-hosted
+              {t('overview.selfHosted')}
             </button>
             <button
               onClick={() => setDeploymentType('cloud')}
@@ -132,7 +137,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
               }`}
             >
               <Cloud className="w-4 h-4" />
-              Cloud
+              {t('overview.cloud')}
             </button>
           </div>
 
@@ -140,15 +145,15 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
           <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800">
             {deploymentType === 'onpremises' ? (
               <div>
-                <strong>Self-hosted:</strong>{' '}
+                <strong>{t('overview.selfHosted')}:</strong>{' '}
                 {platform === 'gitlab'
-                  ? 'Implementação de VM na Oracle Cloud com instalação do GitLab. Requer configuração de rede, segurança e manutenção da infraestrutura.'
-                  : 'Implementação de VM na Azure com instalação do GitHub Enterprise. Requer configuração de rede, segurança e manutenção da infraestrutura.'}
+                  ? t('overview.comparison.deploymentDetails.selfHostedGitLab')
+                  : t('overview.comparison.deploymentDetails.selfHostedGitHub')}
               </div>
             ) : (
               <div>
-                <strong>Cloud:</strong> Serviço gerenciado pela plataforma. Não requer instalação,
-                configuração ou manutenção de infraestrutura. Acesso imediato via navegador.
+                <strong>{t('overview.cloud')}:</strong>{' '}
+                {t('overview.comparison.deploymentDetails.cloud')}
               </div>
             )}
           </div>
@@ -156,7 +161,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
 
         {/* Subtype Toggle */}
         <div>
-          <h4 className="font-semibold text-gray-700 mb-2">Opção:</h4>
+          <h4 className="font-semibold text-gray-700 mb-2">{t('overview.comparison.option')}</h4>
           <div className="flex flex-wrap gap-2">
             {options.map((option) => (
               <button
@@ -178,32 +183,34 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
         <div className="bg-green-50 border border-green-200 rounded p-3">
           <div className="flex items-center gap-2 mb-2">
             <DollarSign className="w-4 h-4 text-green-600" />
-            <span className="font-semibold text-green-800">Custo ({selectedOption.label})</span>
+            <span className="font-semibold text-green-800">
+              {t('overview.comparison.cost')} ({selectedOption.label})
+            </span>
           </div>
           <div className="text-sm text-green-700">
             <div>
-              <strong>Mensal:</strong> {selectedOption.cost.mensal}
+              <strong>{t('overview.comparison.monthly')}</strong> {selectedOption.cost.mensal}
             </div>
             <div>
-              <strong>Anual:</strong> {selectedOption.cost.anual}
+              <strong>{t('overview.comparison.annual')}</strong> {selectedOption.cost.anual}
             </div>
             <div className="text-xs text-gray-600 mt-1">{selectedOption.cost.detalhes}</div>
             {(deploymentType === 'onpremises' ||
               (platform === 'github' && selectedOption.key === 'github_ee_cloud')) && (
               <div className="text-xs text-red-600 mt-2 font-semibold">
-                ⚠️ SEM recursos de IA (apenas Github EE + Copilot)
+                ⚠️ {t('overview.comparison.aiWarnings.noAI')}
               </div>
             )}
             {deploymentType === 'cloud' &&
               platform === 'github' &&
               selectedOption.key === 'github_ee_cloud_copilot' && (
                 <div className="text-xs text-green-600 mt-2 font-semibold flex items-center gap-1">
-                  <Zap className="w-3 h-3" />✅ COM recursos de IA avançados
+                  <Zap className="w-3 h-3" />✅ {t('overview.comparison.aiWarnings.withAI')}
                 </div>
               )}
             {deploymentType === 'cloud' && platform === 'gitlab' && (
               <div className="text-xs text-green-600 mt-2 font-semibold flex items-center gap-1">
-                <Zap className="w-3 h-3" />✅ COM recursos de IA incluídos
+                <Zap className="w-3 h-3" />✅ {t('overview.comparison.aiWarnings.withAIIncluded')}
               </div>
             )}
           </div>
@@ -213,13 +220,15 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
         <div>
           <h4 className="font-semibold text-green-700 mb-3 flex items-center gap-2">
             <CheckCircle className="w-5 h-5" />
-            Vantagens
+            {t('overview.comparison.advantages')}
           </h4>
           <div className="space-y-2">
             {advantages.map((item, index) => (
               <div key={index} className="flex items-start gap-2">
                 <CheckCircle className="w-3 h-3 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-700">{renderTextWithBold(item)}</span>
+                <span className="text-sm text-gray-700">
+                  {renderTextWithBold(translateAdvantageOrDisadvantage(item, t))}
+                </span>
               </div>
             ))}
           </div>
@@ -229,13 +238,15 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
         <div className="border-t pt-4">
           <h4 className="font-semibold text-red-700 mb-3 flex items-center gap-2">
             <XCircle className="w-5 h-5" />
-            Desvantagens
+            {t('overview.comparison.disadvantages')}
           </h4>
           <div className="space-y-2">
             {disadvantages.map((item, index) => (
               <div key={index} className="flex items-start gap-2">
                 <XCircle className="w-3 h-3 text-red-600 mt-1 flex-shrink-0" />
-                <span className="text-sm text-gray-700">{renderTextWithBold(item)}</span>
+                <span className="text-sm text-gray-700">
+                  {renderTextWithBold(translateAdvantageOrDisadvantage(item, t))}
+                </span>
               </div>
             ))}
           </div>
@@ -247,7 +258,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             <div className="flex items-start gap-2 p-3 bg-red-50 border border-red-200 rounded">
               <XCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
               <span className="text-sm text-red-700 font-semibold">
-                ⚠️ Recursos de IA NÃO disponíveis em soluções Self-hosted
+                ⚠️ {t('overview.comparison.aiWarnings.selfHostedWarning')}
               </span>
             </div>
           </div>

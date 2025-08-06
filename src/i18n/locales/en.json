@@ -22,9 +22,31 @@
       "basis": "Recommendation Basis",
       "basisDescription": "This analysis was conducted by the development team, considering technical, operational and strategic aspects of the migration, focusing on the continuity of the project already started and the modernization needs of SHMS."
     },
+    "analysisNote": "Analysis based on updated market data (August 2025) and company's .NET architecture specificities.",
     "deploymentExplanation": {
       "selfHosted": "Installation on dedicated VM in Oracle Cloud (4 vCPU, 16GB RAM, 100GB storage)",
       "cloud": "Managed service by the platform (GitHub.com or GitLab.com)"
+    },
+    "comparison": {
+      "recommended": "RECOMMENDED",
+      "deploymentType": "Deployment Type:",
+      "option": "Option:",
+      "cost": "Cost",
+      "monthly": "Monthly:",
+      "annual": "Annual:",
+      "advantages": "Advantages",
+      "disadvantages": "Disadvantages",
+      "deploymentDetails": {
+        "selfHostedGitLab": "VM implementation in Oracle Cloud with GitLab installation. Requires network configuration, security and infrastructure maintenance.",
+        "selfHostedGitHub": "VM implementation in Azure with GitHub Enterprise installation. Requires network configuration, security and infrastructure maintenance.",
+        "cloud": "Platform managed service. No installation, configuration or infrastructure maintenance required. Immediate access via browser."
+      },
+      "aiWarnings": {
+        "noAI": "NO AI resources (only Github EE + Copilot)",
+        "withAI": "WITH advanced AI resources",
+        "withAIIncluded": "WITH AI resources included",
+        "selfHostedWarning": "AI resources NOT available in Self-hosted solutions"
+      }
     }
   },
   "costs": {
@@ -49,6 +71,55 @@
       "githubEECloudCopilot": "GitHub EE + Copilot (Cloud)"
     },
     "tooltip": "Click on column headers to sort the data."
+  },
+  "advantages": {
+    "dataControl": "Total data control (Oracle Cloud)",
+    "existingInfra": "Leverages existing Oracle infrastructure",
+    "platformConfigured": "Platform already configured and operational",
+    "zeroCost": "**Zero licensing cost**",
+    "professionalSupport": "Professional GitLab support included",
+    "advancedDevSecOps": "**Advanced DevSecOps resources**",
+    "premiumSupport": "Premium professional GitLab support",
+    "completeDevSecOps": "**Complete DevSecOps and Compliance resources**",
+    "enterpriseSecurity": "**Advanced enterprise security resources**",
+    "managedInfra": "Fully managed infrastructure",
+    "autoUpdates": "Automatic platform updates",
+    "autoScalability": "Automatic scalability",
+    "continueMigration": "Leverages migration already started",
+    "noInstallation": "No installation required",
+    "onlyLicenseCost": "License costs only",
+    "aiTools": "**Access to cutting-edge AI tools**",
+    "aiToolsIncluded": "**Cutting-edge AI tools included**",
+    "netMigration": "**Assisted migration .NET Framework → .NET Core**",
+    "unitTests": "**Automated unit test generation**",
+    "naturalEvolution": "Natural evolution of current solution",
+    "matureEcosystem": "**Mature ecosystem for .NET development**",
+    "optimizedCost": "Optimized operational cost",
+    "marketLeadingAI": "**Market-leading AI tools**",
+    "modernPatterns": "**Suggestions for modern patterns (async/await, DI)**",
+    "azureIntegration": "**Native integration with Azure services**"
+  },
+  "disadvantages": {
+    "noMigrationInvestment": "**Does not leverage started migration investment**",
+    "noAI": "No AI resources available",
+    "lessMatture": "Less mature ecosystem for .NET",
+    "manualUpdates": "Manual updates and maintenance",
+    "limitedFeatures": "Limited enterprise features",
+    "highLicenseCost": "**High licensing cost**",
+    "dependsInternet": "Depends on internet connectivity",
+    "lessControl": "Less control over data and infrastructure",
+    "noAdvancedAI": "**No access to advanced AI tools**",
+    "vmMaintenance": "VM and infrastructure maintenance required",
+    "complexSetup": "More complex initial setup",
+    "extremelyHighCost": "**Extremely high cost (R$ 25,592/month)**",
+    "dataNotCorporate": "Data does not remain in corporate infrastructure",
+    "limitedAIvsGitHub": "Limited AI resources compared to GitHub Copilot",
+    "doubleCost": "**Double cost: Azure infrastructure + licenses**",
+    "complexInfraConfig": "Complex infrastructure configuration",
+    "requiresNewAzure": "Requires new Azure infrastructure",
+    "significantOverhead": "Significant operational overhead",
+    "limitedAutomatedModernization": "Limitations for automated modernization",
+    "additionalCopilotInvestment": "Additional investment in Copilot licenses"
   },
   "ai": {
     "title": "Artificial Intelligence Resources",
@@ -210,6 +281,7 @@
     "aiAvailable": "AI resources available",
     "language": "Language",
     "portuguese": "Português",
-    "english": "English"
+    "english": "English",
+    "tip": "Tip"
   }
 }
