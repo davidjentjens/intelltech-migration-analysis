@@ -57,8 +57,18 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
           },
           {
             key: 'gitlab_ee_ultimate_cloud',
-            label: 'GitLab EE Ultimate',
+            label: 'GitLab EE Ultimate (sem IA)',
             cost: researchData.custos.gitlab_ee_ultimate_cloud,
+          },
+          {
+            key: 'gitlab_ee_ultimate_cloud_duo_pro',
+            label: 'GitLab EE Ultimate + Duo Pro',
+            cost: researchData.custos.gitlab_ee_ultimate_cloud_duo_pro,
+          },
+          {
+            key: 'gitlab_ee_ultimate_cloud_duo_enterprise',
+            label: 'GitLab EE Ultimate + Duo Enterprise',
+            cost: researchData.custos.gitlab_ee_ultimate_cloud_duo_enterprise,
           },
         ];
       }
@@ -196,7 +206,8 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             </div>
             <div className="text-xs text-gray-600 mt-1">{selectedOption.cost.detalhes}</div>
             {(deploymentType === 'onpremises' ||
-              (platform === 'github' && selectedOption.key === 'github_ee_cloud')) && (
+              (platform === 'github' && selectedOption.key === 'github_ee_cloud') ||
+              (platform === 'gitlab' && selectedOption.key === 'gitlab_ee_ultimate_cloud')) && (
               <div className="text-xs text-red-600 mt-2 font-semibold">
                 ⚠️ {t('overview.comparison.aiWarnings.noAI')}
               </div>
@@ -208,11 +219,15 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
                   <Zap className="w-3 h-3" />✅ {t('overview.comparison.aiWarnings.withAI')}
                 </div>
               )}
-            {deploymentType === 'cloud' && platform === 'gitlab' && (
-              <div className="text-xs text-green-600 mt-2 font-semibold flex items-center gap-1">
-                <Zap className="w-3 h-3" />✅ {t('overview.comparison.aiWarnings.withAIIncluded')}
-              </div>
-            )}
+            {deploymentType === 'cloud' &&
+              platform === 'gitlab' &&
+              (selectedOption.key === 'gitlab_ee_premium_cloud' ||
+                selectedOption.key === 'gitlab_ee_ultimate_cloud_duo_pro' ||
+                selectedOption.key === 'gitlab_ee_ultimate_cloud_duo_enterprise') && (
+                <div className="text-xs text-green-600 mt-2 font-semibold flex items-center gap-1">
+                  <Zap className="w-3 h-3" />✅ {t('overview.comparison.aiWarnings.withAIIncluded')}
+                </div>
+              )}
           </div>
         </div>
 

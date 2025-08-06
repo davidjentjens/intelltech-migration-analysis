@@ -38,6 +38,24 @@ export const spreadsheetData: SpreadsheetData = {
       '**Recursos completos de DevSecOps e Compliance**',
       '**Recursos de segurança empresariais avançados**',
     ],
+    gitlab_ee_ultimate_cloud_duo_pro: [
+      'Infraestrutura totalmente gerenciada',
+      'Atualizações automáticas da plataforma',
+      'Escalabilidade automática',
+      'Suporte profissional premium GitLab',
+      '**Recursos completos de DevSecOps e Compliance**',
+      '**Recursos de segurança empresariais avançados**',
+      '**Recursos de IA incluídos (GitLab Duo Pro)**',
+    ],
+    gitlab_ee_ultimate_cloud_duo_enterprise: [
+      'Infraestrutura totalmente gerenciada',
+      'Atualizações automáticas da plataforma',
+      'Escalabilidade automática',
+      'Suporte profissional premium GitLab',
+      '**Recursos completos de DevSecOps e Compliance**',
+      '**Recursos de segurança empresariais avançados**',
+      '**Recursos avançados de IA (GitLab Duo Enterprise)**',
+    ],
     // GitHub Options - Self-hosted
     github_ee_onpremises: [
       '**Aproveita migração já iniciada**',
@@ -95,9 +113,25 @@ export const spreadsheetData: SpreadsheetData = {
     gitlab_ee_ultimate_cloud: [
       '**Não aproveita investimento da migração iniciada**',
       'Dados não permanecem na infraestrutura corporativa',
+      '**Nenhum recurso de IA disponível**',
+      'Ecossistema menos maduro para .NET',
+      '**Custo alto (R$ 25.592/mês)**',
+    ],
+    gitlab_ee_ultimate_cloud_duo_pro: [
+      '**Não aproveita investimento da migração iniciada**',
+      'Dados não permanecem na infraestrutura corporativa',
       'Recursos de IA limitados comparado ao GitHub Copilot',
       'Ecossistema menos maduro para .NET',
-      '**Custo extremamente alto (R$ 25.592/mês)**',
+      '**Custo muito alto (R$ 28.727/mês)**',
+      '**Investimento adicional em licenças IA (R$ 3.135/mês)**',
+    ],
+    gitlab_ee_ultimate_cloud_duo_enterprise: [
+      '**Não aproveita investimento da migração iniciada**',
+      'Dados não permanecem na infraestrutura corporativa',
+      'Recursos de IA limitados comparado ao GitHub Copilot',
+      'Ecossistema menos maduro para .NET',
+      '**Custo extremamente alto (R$ 32.027/mês)**',
+      '**Investimento adicional significativo em IA (R$ 6.435/mês)**',
     ],
     // GitHub Options - Self-hosted
     github_ee_onpremises: [

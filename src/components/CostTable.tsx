@@ -147,7 +147,32 @@ const CostTable: React.FC = () => {
         totalAnual: costData.gitlab_ee_ultimate_cloud.totalMensal * 12,
         vmSpecs: costData.gitlab_ee_ultimate_cloud.vmSpecs,
         calculationDetails:
-          'Licença: $99 × 47 usuários × 5,50 = R$ 25.592,50\nInfraestrutura: R$ 0 (Cloud)\nTotal: R$ 25.592,50',
+          'Licença: $99 × 47 usuários × 5,50 = R$ 25.592,50\nInfraestrutura: R$ 0 (Cloud)\nTotal: R$ 25.592,50 (sem IA)',
+      },
+      {
+        plataforma: t('costs.platforms.gitlabEEUltimateCloudDuoPro'),
+        licenseMensal: costData.gitlab_ee_ultimate_cloud_duo_pro.licenseMensal,
+        infrastructureMensal: costData.gitlab_ee_ultimate_cloud_duo_pro.infrastructureMensal,
+        totalMensal: costData.gitlab_ee_ultimate_cloud_duo_pro.totalMensal,
+        licenseAnual: costData.gitlab_ee_ultimate_cloud_duo_pro.licenseMensal * 12,
+        infrastructureAnual: costData.gitlab_ee_ultimate_cloud_duo_pro.infrastructureMensal * 12,
+        totalAnual: costData.gitlab_ee_ultimate_cloud_duo_pro.totalMensal * 12,
+        vmSpecs: costData.gitlab_ee_ultimate_cloud_duo_pro.vmSpecs,
+        calculationDetails:
+          'Ultimate: $99 × 47 = $4.653\nDuo Pro: $19 × 30 = $570\nTotal: $5.223 × 5,50 = R$ 28.726,50',
+      },
+      {
+        plataforma: t('costs.platforms.gitlabEEUltimateCloudDuoEnterprise'),
+        licenseMensal: costData.gitlab_ee_ultimate_cloud_duo_enterprise.licenseMensal,
+        infrastructureMensal: costData.gitlab_ee_ultimate_cloud_duo_enterprise.infrastructureMensal,
+        totalMensal: costData.gitlab_ee_ultimate_cloud_duo_enterprise.totalMensal,
+        licenseAnual: costData.gitlab_ee_ultimate_cloud_duo_enterprise.licenseMensal * 12,
+        infrastructureAnual:
+          costData.gitlab_ee_ultimate_cloud_duo_enterprise.infrastructureMensal * 12,
+        totalAnual: costData.gitlab_ee_ultimate_cloud_duo_enterprise.totalMensal * 12,
+        vmSpecs: costData.gitlab_ee_ultimate_cloud_duo_enterprise.vmSpecs,
+        calculationDetails:
+          'Ultimate: $99 × 47 = $4.653\nDuo Enterprise: $39 × 30 = $1.170\nTotal: $5.823 × 5,50 = R$ 32.026,50',
       },
       {
         plataforma: t('costs.platforms.githubEESelfHosted'),

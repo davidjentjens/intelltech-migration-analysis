@@ -46,7 +46,23 @@ const costData = {
     vmSpecs: 'N/A (Cloud)',
   },
   gitlab_ee_ultimate_cloud: {
-    licenseMensal: 25592.5, // $99 × 47 usuários × 5,50 BRL
+    licenseMensal: 25592.5, // $99 × 47 usuários × 5,50 BRL (sem IA)
+    infrastructureMensal: 0,
+    get totalMensal() {
+      return this.licenseMensal + this.infrastructureMensal;
+    },
+    vmSpecs: 'N/A (Cloud)',
+  },
+  gitlab_ee_ultimate_cloud_duo_pro: {
+    licenseMensal: 28726.5, // $99 × 47 + $19 × 30 = $4653 + $570 = $5223 × 5,50 BRL
+    infrastructureMensal: 0,
+    get totalMensal() {
+      return this.licenseMensal + this.infrastructureMensal;
+    },
+    vmSpecs: 'N/A (Cloud)',
+  },
+  gitlab_ee_ultimate_cloud_duo_enterprise: {
+    licenseMensal: 32026.5, // $99 × 47 + $39 × 30 = $4653 + $1170 = $5823 × 5,50 BRL
     infrastructureMensal: 0,
     get totalMensal() {
       return this.licenseMensal + this.infrastructureMensal;
@@ -160,8 +176,8 @@ export const researchData: ResearchData = {
     gitlab_ee_ultimate_cloud: {
       mensal: formatMonthlyCost(costData.gitlab_ee_ultimate_cloud.totalMensal),
       anual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud.totalMensal),
-      detalhes: `Licença: ${calculateAnnualCost(costData.gitlab_ee_ultimate_cloud.licenseMensal)} (apenas licenças)`,
-      explicacao: 'GitLab Enterprise Edition Ultimate Cloud',
+      detalhes: `Licença: ${calculateAnnualCost(costData.gitlab_ee_ultimate_cloud.licenseMensal)} (sem IA)`,
+      explicacao: 'GitLab Enterprise Edition Ultimate Cloud (sem IA)',
       fonte: 'GitLab Enterprise Edition Ultimate Cloud',
       link: 'https://about.gitlab.com/pricing/',
       licenseMensal: formatMonthlyCost(costData.gitlab_ee_ultimate_cloud.licenseMensal),
@@ -174,6 +190,48 @@ export const researchData: ResearchData = {
         costData.gitlab_ee_ultimate_cloud.infrastructureMensal
       ),
       totalAnual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud.totalMensal),
+      vmSpecs: 'N/A (Cloud)',
+    },
+    gitlab_ee_ultimate_cloud_duo_pro: {
+      mensal: formatMonthlyCost(costData.gitlab_ee_ultimate_cloud_duo_pro.totalMensal),
+      anual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud_duo_pro.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.gitlab_ee_ultimate_cloud_duo_pro.licenseMensal)} (Ultimate + Duo Pro)`,
+      explicacao: 'GitLab Enterprise Edition Ultimate Cloud + Duo Pro',
+      fonte: 'GitLab Enterprise Edition Ultimate Cloud + Duo Pro',
+      link: 'https://about.gitlab.com/pricing/',
+      licenseMensal: formatMonthlyCost(costData.gitlab_ee_ultimate_cloud_duo_pro.licenseMensal),
+      infrastructureMensal: formatMonthlyCost(
+        costData.gitlab_ee_ultimate_cloud_duo_pro.infrastructureMensal
+      ),
+      totalMensal: formatMonthlyCost(costData.gitlab_ee_ultimate_cloud_duo_pro.totalMensal),
+      licenseAnual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud_duo_pro.licenseMensal),
+      infrastructureAnual: calculateAnnualCost(
+        costData.gitlab_ee_ultimate_cloud_duo_pro.infrastructureMensal
+      ),
+      totalAnual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud_duo_pro.totalMensal),
+      vmSpecs: 'N/A (Cloud)',
+    },
+    gitlab_ee_ultimate_cloud_duo_enterprise: {
+      mensal: formatMonthlyCost(costData.gitlab_ee_ultimate_cloud_duo_enterprise.totalMensal),
+      anual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud_duo_enterprise.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.gitlab_ee_ultimate_cloud_duo_enterprise.licenseMensal)} (Ultimate + Duo Enterprise)`,
+      explicacao: 'GitLab Enterprise Edition Ultimate Cloud + Duo Enterprise',
+      fonte: 'GitLab Enterprise Edition Ultimate Cloud + Duo Enterprise',
+      link: 'https://about.gitlab.com/pricing/',
+      licenseMensal: formatMonthlyCost(
+        costData.gitlab_ee_ultimate_cloud_duo_enterprise.licenseMensal
+      ),
+      infrastructureMensal: formatMonthlyCost(
+        costData.gitlab_ee_ultimate_cloud_duo_enterprise.infrastructureMensal
+      ),
+      totalMensal: formatMonthlyCost(costData.gitlab_ee_ultimate_cloud_duo_enterprise.totalMensal),
+      licenseAnual: calculateAnnualCost(
+        costData.gitlab_ee_ultimate_cloud_duo_enterprise.licenseMensal
+      ),
+      infrastructureAnual: calculateAnnualCost(
+        costData.gitlab_ee_ultimate_cloud_duo_enterprise.infrastructureMensal
+      ),
+      totalAnual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud_duo_enterprise.totalMensal),
       vmSpecs: 'N/A (Cloud)',
     },
     // GitHub Options
@@ -250,17 +308,17 @@ export const researchData: ResearchData = {
     },
     gitlab: {
       tools: [
-        'GitLab Duo incluído nos planos EE',
+        'GitLab Duo Pro: R$ 3.135/mês (30 usuários)',
+        'GitLab Duo Enterprise: R$ 6.435/mês (30 usuários)',
         'Foco em DevSecOps e privacidade',
         'Resolução automática de vulnerabilidades',
-        'Análise de root cause em CI/CD',
-        'Gestão automática de seats e permissões',
         'Integração nativa com LDAP/SAML para controle',
+        '**Investimento adicional obrigatório**',
         'Ecosystem menos maduro para .NET',
         'Sem ferramentas específicas de modernização',
       ],
-      rating: 7.0,
-      fonte: 'GitLab Duo Pro - Standard $19/mês, Premium $39/mês',
+      rating: 6.5,
+      fonte: 'GitLab Duo - Compra separada: Pro $19/mês, Enterprise $39/mês por usuário',
     },
   },
 };

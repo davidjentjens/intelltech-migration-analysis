@@ -6,6 +6,8 @@ export interface SpreadsheetData {
     gitlab_ee_ultimate_onpremises: string[];
     gitlab_ee_premium_cloud: string[];
     gitlab_ee_ultimate_cloud: string[];
+    gitlab_ee_ultimate_cloud_duo_pro: string[];
+    gitlab_ee_ultimate_cloud_duo_enterprise: string[];
     // GitHub Options
     github_ee_onpremises: string[];
     github_ee_cloud: string[];
@@ -18,6 +20,8 @@ export interface SpreadsheetData {
     gitlab_ee_ultimate_onpremises: string[];
     gitlab_ee_premium_cloud: string[];
     gitlab_ee_ultimate_cloud: string[];
+    gitlab_ee_ultimate_cloud_duo_pro: string[];
+    gitlab_ee_ultimate_cloud_duo_enterprise: string[];
     // GitHub Options
     github_ee_onpremises: string[];
     github_ee_cloud: string[];
@@ -50,6 +54,8 @@ export interface ResearchData {
     gitlab_ee_ultimate_onpremises: CostData;
     gitlab_ee_premium_cloud: CostData;
     gitlab_ee_ultimate_cloud: CostData;
+    gitlab_ee_ultimate_cloud_duo_pro: CostData;
+    gitlab_ee_ultimate_cloud_duo_enterprise: CostData;
     // GitHub Options
     github_ee_onpremises: CostData;
     github_ee_cloud: CostData;

@@ -66,7 +66,9 @@
       "gitlabEEPremiumSelfHosted": "GitLab EE Premium (Self-hosted)",
       "gitlabEEUltimateSelfHosted": "GitLab EE Ultimate (Self-hosted)",
       "gitlabEEPremiumCloud": "GitLab EE Premium (Cloud)",
-      "gitlabEEUltimateCloud": "GitLab EE Ultimate (Cloud)",
+      "gitlabEEUltimateCloud": "GitLab EE Ultimate (Cloud, no AI)",
+      "gitlabEEUltimateCloudDuoPro": "GitLab EE Ultimate + Duo Pro (Cloud)",
+      "gitlabEEUltimateCloudDuoEnterprise": "GitLab EE Ultimate + Duo Enterprise (Cloud)",
       "githubEESelfHosted": "GitHub EE (Self-hosted)",
       "githubEECloud": "GitHub EE (Cloud)",
       "githubEECloudCopilot": "GitHub EE + Copilot (Cloud)"
