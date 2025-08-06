@@ -203,7 +203,7 @@ const AISection: React.FC = () => {
                 <li className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">✓</span>
                   <span>
-                    <strong>Custo:</strong> Business R$ 104,50/usuário/mês
+                    <strong>Custo:</strong> Enterprise R$ 214,50/usuário/mês
                   </span>
                 </li>
               </ul>

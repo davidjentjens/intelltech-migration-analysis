@@ -69,7 +69,7 @@ const costData = {
     vmSpecs: 'N/A (Cloud)',
   },
   github_ee_cloud_copilot: {
-    licenseMensal: 8549.5,
+    licenseMensal: 15510, // ($21 × 47) + ($39 × 47) = $987 + $1833 = $2820 × 5,50 = R$ 15.510
     infrastructureMensal: 0,
     get totalMensal() {
       return this.licenseMensal + this.infrastructureMensal;

@@ -70,7 +70,7 @@ const costData = {
     vmSpecs: 'N/A (Cloud)',
   },
   github_ee_cloud_copilot: {
-    licenseMensal: 8549.5, // ($21 × 47) + ($19 × 31) = $987 + $570 = $1557 × 5,50
+    licenseMensal: 15510, // ($21 × 47) + ($39 × 47) = $987 + $1833 = $2820 × 5,50 = R$ 15.510
     infrastructureMensal: 0,
     get totalMensal() {
       return this.licenseMensal + this.infrastructureMensal;
@@ -232,7 +232,7 @@ export const researchData: ResearchData = {
         'Geração automatizada de unit tests',
         'Suggestions para patterns modernos (async/await, DI)',
         'Integração com Azure services',
-        'Copilot Business: R$ 104,50/usuário/mês',
+        'Copilot Enterprise: R$ 214,50/usuário/mês',
       ],
       rating: 9.5,
       fonte: 'GitHub Copilot oficial - Business $19/mês, Enterprise $39/mês',
