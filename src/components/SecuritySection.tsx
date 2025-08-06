@@ -8,36 +8,42 @@ const SecuritySection: React.FC = () => {
         <h2 className="text-2xl font-bold text-gray-800 mb-4">
           Análise de Segurança da Informação
         </h2>
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
-          <p className="text-blue-800 text-sm mb-3">
-            📄 <strong>Documento Completo Disponível:</strong> Acesse a análise técnica detalhada da
-            equipe de SI
-          </p>
-          <a
-            href="/Análise Comparativa Git - Segurança da Informação.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
-          >
-            <FileSearch className="w-4 h-4" />
-            Visualizar PDF Completo
-          </a>
-        </div>
       </div>
 
       {/* Aviso sobre escopo da análise */}
       <div className="bg-amber-50 border-2 border-amber-200 rounded-lg p-6">
-        <div className="flex items-center gap-3">
-          <AlertTriangle className="w-6 h-6 text-amber-500" />
-          <div>
-            <h3 className="text-lg font-bold text-amber-800 mb-2">Escopo da Análise de SI</h3>
-            <p className="text-amber-700">
+        <div className="flex items-start gap-4">
+          <AlertTriangle className="w-6 h-6 text-amber-500 mt-1 flex-shrink-0" />
+          <div className="flex-1">
+            <h3 className="text-lg font-bold text-amber-800 mb-3">Escopo da Análise de SI</h3>
+            <p className="text-amber-700 mb-4">
               Esta análise foi conduzida pela equipe de Segurança da Informação focando
               especificamente em
               <strong> soluções On-Premises (no nosso caso, Self-Hosted)</strong>. As opções Cloud
               (GitHub Enterprise Cloud, GitLab Cloud) não foram consideradas nesta avaliação de
               segurança corporativa.
             </p>
+
+            {/* PDF Document Section */}
+            <div className="bg-amber-100 border border-amber-300 rounded-lg p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <FileSearch className="w-5 h-5 text-amber-700" />
+                <h4 className="font-semibold text-amber-800">📄 Documento Completo Disponível</h4>
+              </div>
+              <p className="text-amber-700 text-sm mb-3">
+                Acesse a análise técnica detalhada da equipe de Segurança da Informação com todos os
+                critérios, avaliações e recomendações específicas.
+              </p>
+              <a
+                href="/Análise Comparativa Git - Segurança da Informação.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200 text-sm"
+              >
+                <FileSearch className="w-4 h-4" />
+                Visualizar PDF Completo
+              </a>
+            </div>
           </div>
         </div>
       </div>

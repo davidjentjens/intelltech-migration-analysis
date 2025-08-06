@@ -1,7 +1,7 @@
 import React from 'react';
 import AICard from './AICard';
 import { researchData } from '@/data';
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Brain, Users } from 'lucide-react';
 
 const AISection: React.FC = () => {
   const aiCards = [
@@ -255,6 +255,42 @@ const AISection: React.FC = () => {
           </a>{' '}
           | GitHub Copilot oficial ($19/mês Business, $39/mês Enterprise) | GitLab Duo incluído nos
           planos pagos | Conversão: 1 USD = 5,50 BRL
+        </div>
+      </div>
+
+      {/* Recomendação de IA */}
+      <div className="bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-200 rounded-lg p-6">
+        <div className="text-center">
+          <h3 className="text-xl font-bold text-purple-800 mb-3 flex items-center justify-center gap-2">
+            <Brain className="w-6 h-6" />
+            Recomendação de Recursos de IA
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white border border-purple-300 rounded-lg p-6 mb-4">
+              <h4 className="font-bold text-purple-800 mb-3 text-lg">
+                🤖 GitHub Copilot Enterprise para Modernização .NET
+              </h4>
+              <p className="text-gray-700 text-base leading-relaxed">
+                Para o contexto específico do <strong>SHMS e modernização .NET Framework</strong>, o
+                GitHub Copilot oferece vantagens técnicas decisivas. Suas ferramentas especializadas
+                para migração .NET, geração automatizada de testes e integração com Visual Studio
+                proporcionam um <strong>ROI superior</strong> comparado ao GitLab Duo, que possui
+                foco em DevSecOps sem ferramentas específicas para modernização de código.
+              </p>
+            </div>
+
+            <div className="bg-white border border-blue-300 rounded-lg p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Users className="w-5 h-5 text-blue-600" />
+                <h5 className="font-semibold text-blue-800">Justificativa Técnica</h5>
+              </div>
+              <p className="text-blue-700 text-sm">
+                Análise baseada na superioridade do GitHub Copilot para desenvolvimento .NET,
+                integração nativa com Azure services, e ferramentas específicas para modernização de
+                aplicações legadas - fatores críticos para o sucesso da evolução do SHMS.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

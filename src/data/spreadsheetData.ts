@@ -47,10 +47,6 @@ export const spreadsheetData: SpreadsheetData = {
       'Atualizações automáticas',
       'Aproveita migração já iniciada',
       'Infraestrutura gerenciada',
-      'Acesso a ferramentas de IA de ponta',
-      '**Migração assistida .NET Framework → .NET Core**',
-      '**Geração automatizada de unit tests**',
-      '**Suggestions para patterns modernos (async/await, DI)**',
     ],
     github_ee_cloud_copilot: [
       'Custo apenas de licenças e Copilot',
