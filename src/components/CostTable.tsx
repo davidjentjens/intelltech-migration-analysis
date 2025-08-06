@@ -87,7 +87,6 @@ type CostRowData = {
   infrastructureAnual: number;
   totalAnual: number;
   vmSpecs: string;
-  isRecommended: boolean;
 };
 
 const columnHelper = createColumnHelper<CostRowData>();
@@ -146,7 +145,6 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ce_onpremises.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ce_onpremises.totalMensal * 12,
         vmSpecs: costData.gitlab_ce_onpremises.vmSpecs,
-        isRecommended: false,
       },
       {
         plataforma: 'GitLab EE Premium (Self-hosted)',
@@ -157,7 +155,6 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ee_premium_onpremises.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ee_premium_onpremises.totalMensal * 12,
         vmSpecs: costData.gitlab_ee_premium_onpremises.vmSpecs,
-        isRecommended: false,
       },
       {
         plataforma: 'GitLab EE Ultimate (Self-hosted)',
@@ -168,7 +165,6 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ee_ultimate_onpremises.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ee_ultimate_onpremises.totalMensal * 12,
         vmSpecs: costData.gitlab_ee_ultimate_onpremises.vmSpecs,
-        isRecommended: false,
       },
       {
         plataforma: 'GitLab EE Premium (Cloud)',
@@ -179,7 +175,6 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ee_premium_cloud.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ee_premium_cloud.totalMensal * 12,
         vmSpecs: costData.gitlab_ee_premium_cloud.vmSpecs,
-        isRecommended: false,
       },
       {
         plataforma: 'GitLab EE Ultimate (Cloud)',
@@ -190,7 +185,6 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.gitlab_ee_ultimate_cloud.infrastructureMensal * 12,
         totalAnual: costData.gitlab_ee_ultimate_cloud.totalMensal * 12,
         vmSpecs: costData.gitlab_ee_ultimate_cloud.vmSpecs,
-        isRecommended: false,
       },
       {
         plataforma: 'GitHub EE (Self-hosted)',
@@ -201,7 +195,6 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.github_ee_onpremises.infrastructureMensal * 12,
         totalAnual: costData.github_ee_onpremises.totalMensal * 12,
         vmSpecs: costData.github_ee_onpremises.vmSpecs,
-        isRecommended: false,
       },
       {
         plataforma: 'GitHub EE (Cloud)',
@@ -212,7 +205,6 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.github_ee_cloud.infrastructureMensal * 12,
         totalAnual: costData.github_ee_cloud.totalMensal * 12,
         vmSpecs: costData.github_ee_cloud.vmSpecs,
-        isRecommended: true,
       },
       {
         plataforma: 'GitHub EE + Copilot (Cloud)',
@@ -223,7 +215,6 @@ const CostTable: React.FC = () => {
         infrastructureAnual: costData.github_ee_cloud_copilot.infrastructureMensal * 12,
         totalAnual: costData.github_ee_cloud_copilot.totalMensal * 12,
         vmSpecs: costData.github_ee_cloud_copilot.vmSpecs,
-        isRecommended: true,
       },
     ],
     []
@@ -277,9 +268,7 @@ const CostTable: React.FC = () => {
             {table.getRowModel().rows.map((row) => (
               <tr
                 key={row.id}
-                className={`border-b border-yellow-200 hover:bg-yellow-50 transition-colors ${
-                  row.original.isRecommended ? 'bg-green-50' : ''
-                }`}
+                className="border-b border-yellow-200 hover:bg-yellow-50 transition-colors"
               >
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id} className="py-2 px-1">
@@ -292,8 +281,7 @@ const CostTable: React.FC = () => {
         </table>
       </div>
       <div className="mt-4 text-xs text-yellow-700 bg-yellow-100 p-2 rounded">
-        💡 <strong>Dica:</strong> Clique nos cabeçalhos das colunas para ordenar os dados. As linhas
-        destacadas em verde são as opções recomendadas.
+        💡 <strong>Dica:</strong> Clique nos cabeçalhos das colunas para ordenar os dados.
       </div>
     </div>
   );
