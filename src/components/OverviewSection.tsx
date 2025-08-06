@@ -1,5 +1,6 @@
 import React from 'react';
 import ComparisonBox from './ComparisonBox';
+import { researchData } from '@/data';
 
 const OverviewSection: React.FC = () => {
   return (
@@ -25,59 +26,68 @@ const OverviewSection: React.FC = () => {
             <thead>
               <tr className="border-b-2 border-yellow-300">
                 <th className="text-left py-3 px-4 font-semibold">Plataforma</th>
-                <th className="text-center py-3 px-4 font-semibold">Custo Mensal</th>
-                <th className="text-center py-3 px-4 font-semibold">Custo Anual</th>
-                <th className="text-center py-3 px-4 font-semibold">Detalhes</th>
+                <th className="text-center py-3 px-4 font-semibold">Licenças (Anual)</th>
+                <th className="text-center py-3 px-4 font-semibold">Infraestrutura (Anual)</th>
+                <th className="text-center py-3 px-4 font-semibold">Total Anual</th>
+                <th className="text-center py-3 px-4 font-semibold">VM Specs</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-yellow-200">
                 <td className="py-3 px-4 font-medium">GitLab CE (Self-hosted)</td>
-                <td className="text-center py-3 px-4">R$ 0</td>
-                <td className="text-center py-3 px-4">R$ 0</td>
-                <td className="py-3 px-4 text-xs">Licença gratuita, apenas infraestrutura</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ce_onpremises.licenseAnual}</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ce_onpremises.infrastructureAnual}</td>
+                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ce_onpremises.totalAnual}</td>
+                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ce_onpremises.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
                 <td className="py-3 px-4 font-medium">GitLab EE Premium (Self-hosted)</td>
-                <td className="text-center py-3 px-4">R$ 7.496</td>
-                <td className="text-center py-3 px-4">R$ 89.958</td>
-                <td className="py-3 px-4 text-xs">GitLab EE Premium $29/usuário</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_premium_onpremises.licenseAnual}</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_premium_onpremises.infrastructureAnual}</td>
+                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ee_premium_onpremises.totalAnual}</td>
+                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ee_premium_onpremises.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
                 <td className="py-3 px-4 font-medium">GitLab EE Ultimate (Self-hosted)</td>
-                <td className="text-center py-3 px-4">R$ 25.592</td>
-                <td className="text-center py-3 px-4">R$ 307.100</td>
-                <td className="py-3 px-4 text-xs">GitLab EE Ultimate $99/usuário</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_ultimate_onpremises.licenseAnual}</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_ultimate_onpremises.infrastructureAnual}</td>
+                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ee_ultimate_onpremises.totalAnual}</td>
+                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ee_ultimate_onpremises.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
                 <td className="py-3 px-4 font-medium">GitLab EE Premium (Cloud)</td>
-                <td className="text-center py-3 px-4">R$ 7.496</td>
-                <td className="text-center py-3 px-4">R$ 89.958</td>
-                <td className="py-3 px-4 text-xs">GitLab EE Premium Cloud $29/usuário</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_premium_cloud.licenseAnual}</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_premium_cloud.infrastructureAnual}</td>
+                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ee_premium_cloud.totalAnual}</td>
+                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ee_premium_cloud.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
                 <td className="py-3 px-4 font-medium">GitLab EE Ultimate (Cloud)</td>
-                <td className="text-center py-3 px-4">R$ 25.592</td>
-                <td className="text-center py-3 px-4">R$ 307.100</td>
-                <td className="py-3 px-4 text-xs">GitLab EE Ultimate Cloud $99/usuário</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_ultimate_cloud.licenseAnual}</td>
+                <td className="text-center py-3 px-4">{researchData.custos.gitlab_ee_ultimate_cloud.infrastructureAnual}</td>
+                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.gitlab_ee_ultimate_cloud.totalAnual}</td>
+                <td className="py-3 px-4 text-xs">{researchData.custos.gitlab_ee_ultimate_cloud.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200">
                 <td className="py-3 px-4 font-medium">GitHub EE (Self-hosted)</td>
-                <td className="text-center py-3 px-4">R$ 5.429</td>
-                <td className="text-center py-3 px-4">R$ 65.142</td>
-                <td className="py-3 px-4 text-xs">GitHub EE $21/usuário + Azure VM</td>
+                <td className="text-center py-3 px-4">{researchData.custos.github_ee_onpremises.licenseAnual}</td>
+                <td className="text-center py-3 px-4">{researchData.custos.github_ee_onpremises.infrastructureAnual}</td>
+                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.github_ee_onpremises.totalAnual}</td>
+                <td className="py-3 px-4 text-xs">{researchData.custos.github_ee_onpremises.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200 bg-green-50">
                 <td className="py-3 px-4 font-medium">GitHub EE (Cloud)</td>
-                <td className="text-center py-3 px-4">R$ 5.429</td>
-                <td className="text-center py-3 px-4">R$ 65.142</td>
-                <td className="py-3 px-4 text-xs">GitHub EE Cloud $21/usuário</td>
+                <td className="text-center py-3 px-4">{researchData.custos.github_ee_cloud.licenseAnual}</td>
+                <td className="text-center py-3 px-4">{researchData.custos.github_ee_cloud.infrastructureAnual}</td>
+                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.github_ee_cloud.totalAnual}</td>
+                <td className="py-3 px-4 text-xs">{researchData.custos.github_ee_cloud.vmSpecs}</td>
               </tr>
               <tr className="border-b border-yellow-200 bg-green-50">
                 <td className="py-3 px-4 font-medium">GitHub EE + Copilot (Cloud)</td>
-                <td className="text-center py-3 px-4">R$ 11.864</td>
-                <td className="text-center py-3 px-4">R$ 142.362</td>
-                <td className="py-3 px-4 text-xs">GitHub EE + Copilot Enterprise $21+$39/usuário</td>
+                <td className="text-center py-3 px-4">{researchData.custos.github_ee_cloud_copilot.licenseAnual}</td>
+                <td className="text-center py-3 px-4">{researchData.custos.github_ee_cloud_copilot.infrastructureAnual}</td>
+                <td className="text-center py-3 px-4 font-semibold">{researchData.custos.github_ee_cloud_copilot.totalAnual}</td>
+                <td className="py-3 px-4 text-xs">{researchData.custos.github_ee_cloud_copilot.vmSpecs}</td>
               </tr>
             </tbody>
           </table>

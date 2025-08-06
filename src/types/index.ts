@@ -32,6 +32,11 @@ export interface CostData {
   fonte: string;
   link: string;
   explicacao?: string;
+  // Detailed cost breakdown
+  licenseAnual?: string;
+  infrastructureAnual?: string;
+  totalAnual?: string;
+  vmSpecs?: string;
 }
 
 export interface ResearchData {

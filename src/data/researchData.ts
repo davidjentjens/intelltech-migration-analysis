@@ -1,72 +1,167 @@
 import { ResearchData } from '../types';
 
+// Utility function to calculate annual cost from monthly
+const calculateAnnualCost = (monthlyCostBRL: number): string => {
+  const annual = monthlyCostBRL * 12;
+  return `R$ ${annual.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+};
+
+// Utility function to format monthly cost
+const formatMonthlyCost = (monthlyCostBRL: number): string => {
+  return `R$ ${monthlyCostBRL.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+};
+
+// Cost data from CSV (monthly values in BRL)
+const costData = {
+  gitlab_ce_onpremises: { 
+    licenseMensal: 0, 
+    infrastructureMensal: 41452.68 / 12, 
+    totalMensal: 41452.68 / 12, 
+    vmSpecs: "Oracle VM" 
+  },
+  gitlab_ee_premium_onpremises: { 
+    licenseMensal: 89958 / 12, 
+    infrastructureMensal: 41452.68 / 12, 
+    totalMensal: 131410.68 / 12, 
+    vmSpecs: "Oracle VM" 
+  },
+  gitlab_ee_ultimate_onpremises: { 
+    licenseMensal: 307100 / 12, 
+    infrastructureMensal: 41452.68 / 12, 
+    totalMensal: 348552.68 / 12, 
+    vmSpecs: "Oracle VM" 
+  },
+  gitlab_ee_premium_cloud: { 
+    licenseMensal: 89958 / 12, 
+    infrastructureMensal: 0, 
+    totalMensal: 89958 / 12, 
+    vmSpecs: "N/A" 
+  },
+  gitlab_ee_ultimate_cloud: { 
+    licenseMensal: 307100 / 12, 
+    infrastructureMensal: 0, 
+    totalMensal: 307100 / 12, 
+    vmSpecs: "N/A" 
+  },
+  github_ee_onpremises: { 
+    licenseMensal: 65142 / 12, 
+    infrastructureMensal: 23100 / 12, 
+    totalMensal: 88242 / 12, 
+    vmSpecs: "Azure VM" 
+  },
+  github_ee_cloud: { 
+    licenseMensal: 65142 / 12, 
+    infrastructureMensal: 0, 
+    totalMensal: 65142 / 12, 
+    vmSpecs: "N/A" 
+  },
+  github_ee_cloud_copilot: { 
+    licenseMensal: 142362 / 12, 
+    infrastructureMensal: 0, 
+    totalMensal: 142362 / 12, 
+    vmSpecs: "N/A" 
+  }
+};
+
 export const researchData: ResearchData = {
   custos: {
     // GitLab Options
     gitlab_ce_onpremises: { 
-      mensal: "R$ 0", 
-      anual: "R$ 0", 
-      detalhes: "Custo de licença apenas, exclui infraestrutura Oracle Cloud",
-      explicacao: "GitLab Community Edition - licença gratuita",
-      fonte: "GitLab Community Edition",
-      link: "https://about.gitlab.com/pricing/"
+      mensal: formatMonthlyCost(costData.gitlab_ce_onpremises.totalMensal),
+      anual: calculateAnnualCost(costData.gitlab_ce_onpremises.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.gitlab_ce_onpremises.licenseMensal)} + Infraestrutura: ${calculateAnnualCost(costData.gitlab_ce_onpremises.infrastructureMensal)}`,
+      explicacao: "GitLab Community Edition (licença gratuita) + Oracle VM",
+      fonte: "GitLab Community Edition + Oracle Cloud",
+      link: "https://about.gitlab.com/pricing/",
+      licenseAnual: calculateAnnualCost(costData.gitlab_ce_onpremises.licenseMensal),
+      infrastructureAnual: calculateAnnualCost(costData.gitlab_ce_onpremises.infrastructureMensal),
+      totalAnual: calculateAnnualCost(costData.gitlab_ce_onpremises.totalMensal),
+      vmSpecs: costData.gitlab_ce_onpremises.vmSpecs
     },
     gitlab_ee_premium_onpremises: { 
-      mensal: "R$ 7.496", 
-      anual: "R$ 89.958", 
-      detalhes: "GitLab EE Premium: $29/usuário × 47 usuários",
-      explicacao: "GitLab Enterprise Edition Premium + infraestrutura Oracle Cloud",
-      fonte: "GitLab Enterprise Edition Premium",
-      link: "https://about.gitlab.com/pricing/"
+      mensal: formatMonthlyCost(costData.gitlab_ee_premium_onpremises.totalMensal),
+      anual: calculateAnnualCost(costData.gitlab_ee_premium_onpremises.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.gitlab_ee_premium_onpremises.licenseMensal)} + Infraestrutura: ${calculateAnnualCost(costData.gitlab_ee_premium_onpremises.infrastructureMensal)}`,
+      explicacao: "GitLab Enterprise Edition Premium + Oracle VM",
+      fonte: "GitLab Enterprise Edition Premium + Oracle Cloud",
+      link: "https://about.gitlab.com/pricing/",
+      licenseAnual: calculateAnnualCost(costData.gitlab_ee_premium_onpremises.licenseMensal),
+      infrastructureAnual: calculateAnnualCost(costData.gitlab_ee_premium_onpremises.infrastructureMensal),
+      totalAnual: calculateAnnualCost(costData.gitlab_ee_premium_onpremises.totalMensal),
+      vmSpecs: costData.gitlab_ee_premium_onpremises.vmSpecs
     },
     gitlab_ee_ultimate_onpremises: { 
-      mensal: "R$ 25.592", 
-      anual: "R$ 307.100", 
-      detalhes: "GitLab EE Ultimate: $99/usuário × 47 usuários",
-      explicacao: "GitLab Enterprise Edition Ultimate + infraestrutura Oracle Cloud",
-      fonte: "GitLab Enterprise Edition Ultimate",
-      link: "https://about.gitlab.com/pricing/"
+      mensal: formatMonthlyCost(costData.gitlab_ee_ultimate_onpremises.totalMensal),
+      anual: calculateAnnualCost(costData.gitlab_ee_ultimate_onpremises.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.gitlab_ee_ultimate_onpremises.licenseMensal)} + Infraestrutura: ${calculateAnnualCost(costData.gitlab_ee_ultimate_onpremises.infrastructureMensal)}`,
+      explicacao: "GitLab Enterprise Edition Ultimate + Oracle VM",
+      fonte: "GitLab Enterprise Edition Ultimate + Oracle Cloud",
+      link: "https://about.gitlab.com/pricing/",
+      licenseAnual: calculateAnnualCost(costData.gitlab_ee_ultimate_onpremises.licenseMensal),
+      infrastructureAnual: calculateAnnualCost(costData.gitlab_ee_ultimate_onpremises.infrastructureMensal),
+      totalAnual: calculateAnnualCost(costData.gitlab_ee_ultimate_onpremises.totalMensal),
+      vmSpecs: costData.gitlab_ee_ultimate_onpremises.vmSpecs
     },
     gitlab_ee_premium_cloud: { 
-      mensal: "R$ 7.496", 
-      anual: "R$ 89.958", 
-      detalhes: "GitLab EE Premium Cloud: $29/usuário × 47 usuários",
+      mensal: formatMonthlyCost(costData.gitlab_ee_premium_cloud.totalMensal),
+      anual: calculateAnnualCost(costData.gitlab_ee_premium_cloud.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.gitlab_ee_premium_cloud.licenseMensal)} (apenas licenças)`,
       explicacao: "GitLab Enterprise Edition Premium Cloud",
       fonte: "GitLab Enterprise Edition Premium Cloud",
-      link: "https://about.gitlab.com/pricing/"
+      link: "https://about.gitlab.com/pricing/",
+      licenseAnual: calculateAnnualCost(costData.gitlab_ee_premium_cloud.licenseMensal),
+      infrastructureAnual: "R$ 0,00",
+      totalAnual: calculateAnnualCost(costData.gitlab_ee_premium_cloud.totalMensal),
+      vmSpecs: "N/A (Cloud)"
     },
     gitlab_ee_ultimate_cloud: { 
-      mensal: "R$ 25.592", 
-      anual: "R$ 307.100", 
-      detalhes: "GitLab EE Ultimate Cloud: $99/usuário × 47 usuários",
+      mensal: formatMonthlyCost(costData.gitlab_ee_ultimate_cloud.totalMensal),
+      anual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.gitlab_ee_ultimate_cloud.licenseMensal)} (apenas licenças)`,
       explicacao: "GitLab Enterprise Edition Ultimate Cloud",
       fonte: "GitLab Enterprise Edition Ultimate Cloud",
-      link: "https://about.gitlab.com/pricing/"
+      link: "https://about.gitlab.com/pricing/",
+      licenseAnual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud.licenseMensal),
+      infrastructureAnual: "R$ 0,00",
+      totalAnual: calculateAnnualCost(costData.gitlab_ee_ultimate_cloud.totalMensal),
+      vmSpecs: "N/A (Cloud)"
     },
     // GitHub Options
     github_ee_onpremises: { 
-      mensal: "R$ 5.429", 
-      anual: "R$ 65.142", 
-      detalhes: "GitHub EE: $21/usuário × 47 usuários + Azure VM",
-      explicacao: "GitHub Enterprise Edition + infraestrutura Azure VM",
-      fonte: "GitHub Enterprise Edition",
-      link: "https://github.com/pricing"
+      mensal: formatMonthlyCost(costData.github_ee_onpremises.totalMensal),
+      anual: calculateAnnualCost(costData.github_ee_onpremises.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.github_ee_onpremises.licenseMensal)} + Infraestrutura: ${calculateAnnualCost(costData.github_ee_onpremises.infrastructureMensal)}`,
+      explicacao: "GitHub Enterprise Edition + Azure VM",
+      fonte: "GitHub Enterprise Edition + Azure VM",
+      link: "https://github.com/pricing",
+      licenseAnual: calculateAnnualCost(costData.github_ee_onpremises.licenseMensal),
+      infrastructureAnual: calculateAnnualCost(costData.github_ee_onpremises.infrastructureMensal),
+      totalAnual: calculateAnnualCost(costData.github_ee_onpremises.totalMensal),
+      vmSpecs: costData.github_ee_onpremises.vmSpecs
     },
     github_ee_cloud: { 
-      mensal: "R$ 5.429", 
-      anual: "R$ 65.142", 
-      detalhes: "GitHub EE Cloud: $21/usuário × 47 usuários",
+      mensal: formatMonthlyCost(costData.github_ee_cloud.totalMensal),
+      anual: calculateAnnualCost(costData.github_ee_cloud.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.github_ee_cloud.licenseMensal)} (apenas licenças)`,
       explicacao: "GitHub Enterprise Edition Cloud",
       fonte: "GitHub Enterprise Edition Cloud",
-      link: "https://github.com/pricing"
+      link: "https://github.com/pricing",
+      licenseAnual: calculateAnnualCost(costData.github_ee_cloud.licenseMensal),
+      infrastructureAnual: "R$ 0,00",
+      totalAnual: calculateAnnualCost(costData.github_ee_cloud.totalMensal),
+      vmSpecs: "N/A (Cloud)"
     },
     github_ee_cloud_copilot: { 
-      mensal: "R$ 11.864", 
-      anual: "R$ 142.362", 
-      detalhes: "GitHub EE Cloud + Copilot Enterprise: $21 + $39/usuário × 47",
-      explicacao: "GitHub Enterprise Edition Cloud + Copilot Enterprise para 30 usuários",
+      mensal: formatMonthlyCost(costData.github_ee_cloud_copilot.totalMensal),
+      anual: calculateAnnualCost(costData.github_ee_cloud_copilot.totalMensal),
+      detalhes: `Licença: ${calculateAnnualCost(costData.github_ee_cloud_copilot.licenseMensal)} (GitHub EE + 30 usuários Copilot)`,
+      explicacao: "GitHub Enterprise Edition Cloud + Copilot Enterprise (30 usuários)",
       fonte: "GitHub Enterprise Edition Cloud + Copilot",
-      link: "https://github.com/pricing"
+      link: "https://github.com/pricing",
+      licenseAnual: calculateAnnualCost(costData.github_ee_cloud_copilot.licenseMensal),
+      infrastructureAnual: "R$ 0,00",
+      totalAnual: calculateAnnualCost(costData.github_ee_cloud_copilot.totalMensal),
+      vmSpecs: "N/A (Cloud)"
     }
   },
   ia: {
