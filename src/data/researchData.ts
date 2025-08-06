@@ -19,23 +19,23 @@ const costData = {
     get totalMensal() {
       return this.licenseMensal + this.infrastructureMensal;
     },
-    vmSpecs: '4 vCPU 16GB RAM 100GB',
+    vmSpecs: '1 vCPU 8GB RAM 500GB',
   },
   gitlab_ee_premium_onpremises: {
     licenseMensal: 7482.5, // $29 × 47 usuários × 5,50 BRL = $1363 × 5,50
-    infrastructureMensal: 385, // R$ 70 USD × 5,50 BRL
+    infrastructureMensal: 488, // R$ 88 USD × 5,50 BRL
     get totalMensal() {
       return this.licenseMensal + this.infrastructureMensal;
     },
-    vmSpecs: '8 vCPU 32GB RAM 200GB',
+    vmSpecs: '2 vCPU 8GB RAM 1000GB',
   },
   gitlab_ee_ultimate_onpremises: {
     licenseMensal: 25592.5, // $99 × 47 usuários × 5,50 BRL = $4653 × 5,50
-    infrastructureMensal: 385, // R$ 70 USD × 5,50 BRL
+    infrastructureMensal: 742, // R$ 135 USD × 5,50 BRL
     get totalMensal() {
       return this.licenseMensal + this.infrastructureMensal;
     },
-    vmSpecs: '16 vCPU 64GB RAM 500GB',
+    vmSpecs: '4 vCPU 16GB RAM 1000GB',
   },
   gitlab_ee_premium_cloud: {
     licenseMensal: 7482.5, // $29 × 47 usuários × 5,50 BRL
@@ -54,15 +54,15 @@ const costData = {
     vmSpecs: 'N/A (Cloud)',
   },
   github_ee_onpremises: {
-    licenseMensal: 5423.5, // $21 × 47 usuários × 5,50 BRL = $987 × 5,50
-    infrastructureMensal: 2926, // $532 USD × 5,50 BRL (Azure VM E8s_v5)
+    licenseMensal: 5428.5, // $21 × 47 usuários × 5,50 BRL = $987 × 5,50
+    infrastructureMensal: 4328.5, // $787 USD × 5,50 BRL (Azure VM E8s_v5)
     get totalMensal() {
       return this.licenseMensal + this.infrastructureMensal;
     },
-    vmSpecs: '16 vCPU 48-256GB RAM',
+    vmSpecs: '16 vCPU 64GB RAM 768GB',
   },
   github_ee_cloud: {
-    licenseMensal: 5423.5, // $21 × 47 usuários × 5,50 BRL
+    licenseMensal: 5428.5, // $21 × 47 usuários × 5,50 BRL
     infrastructureMensal: 0,
     get totalMensal() {
       return this.licenseMensal + this.infrastructureMensal;
@@ -70,7 +70,7 @@ const costData = {
     vmSpecs: 'N/A (Cloud)',
   },
   github_ee_cloud_copilot: {
-    licenseMensal: 8549.5, // ($21 × 47) + ($19 × 30) = $987 + $570 = $1557 × 5,50
+    licenseMensal: 8549.5, // ($21 × 47) + ($19 × 31) = $987 + $570 = $1557 × 5,50
     infrastructureMensal: 0,
     get totalMensal() {
       return this.licenseMensal + this.infrastructureMensal;
