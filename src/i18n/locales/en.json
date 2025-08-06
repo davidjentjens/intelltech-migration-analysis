@@ -270,29 +270,48 @@
     "title": "Information Security Analysis",
     "scope": {
       "title": "IS Analysis Scope",
-      "description": "This analysis focuses on On-Premises solutions. Cloud options were not evaluated by the Information Security team.",
+      "description": "This analysis was conducted by the Information Security team focusing specifically on On-Premises solutions (in our case, Self-Hosted). Cloud options (GitHub Enterprise Cloud, GitLab Cloud) were not considered in this corporate security assessment.",
       "documentTitle": "Complete Document Available",
       "documentDescription": "Access the detailed technical analysis from the Information Security team with all criteria, evaluations and specific recommendations.",
       "viewPDF": "View Complete PDF"
     },
     "matrix": {
-      "title": "Comparative Security Matrix",
-      "criteria": "Criteria",
-      "gitlabCE": "GitLab CE",
-      "gitlabEE": "GitLab EE Ultimate",
-      "githubES": "GitHub Enterprise Server",
-      "authentication": "Authentication",
-      "permissions": "Permissions",
-      "auditing": "Auditing",
-      "sast": "SAST",
-      "dast": "DAST",
-      "secretScanning": "Secret Scanning",
-      "dependencyScanning": "Dependency Scanning",
-      "containerScanning": "Container Scanning",
-      "compliance": "Compliance",
-      "backup": "Backup/Restore",
-      "highAvailability": "High Availability",
-      "disasterRecovery": "Disaster Recovery"
+      "title": "Security Comparison Matrix",
+      "headers": {
+        "criteria": "Security Criteria",
+        "current": "Current",
+        "onPremises": "On-Premises",
+        "importance": "Importance"
+      },
+      "values": {
+        "basic": "Basic",
+        "robust": "Robust",
+        "excellent": "Excellent",
+        "limited": "Limited",
+        "absent": "Absent",
+        "native": "Native",
+        "integration": "Integration",
+        "frameworks": "Frameworks",
+        "codeql": "CodeQL",
+        "pushProtection": "Push Protection",
+        "critical": "CRITICAL",
+        "important": "IMPORTANT",
+        "moderate": "MODERATE",
+        "high": "HIGH"
+      },
+      "criteria": {
+        "authentication": "Authentication and Authorization (SSO, MFA)",
+        "permissions": "Granular Permission Control",
+        "auditLogs": "Activity Registration and Auditing",
+        "sast": "SAST (Static Code Analysis)",
+        "dast": "DAST (Dynamic Application Analysis)",
+        "dependencyAnalysis": "Dependency Analysis",
+        "secretDetection": "Secret Detection",
+        "compliance": "Compliance Support (SOC 2, ISO 27001)",
+        "backup": "Backup and Disaster Recovery",
+        "highAvailability": "High Availability",
+        "ldap": "LDAP/AD Integration"
+      }
     },
     "legend": {
       "title": "Legend",
@@ -306,35 +325,72 @@
     },
     "analysis": {
       "gitlabCE": {
-        "title": "GitLab Community Edition",
-        "pros": "Positive Points",
-        "cons": "Negative Points",
-        "evaluation": "IS Evaluation"
+        "title": "GitLab CE (Current)",
+        "pros": "Pros",
+        "cons": "Critical Cons",
+        "evaluation": "IS Evaluation",
+        "prosItems": ["Zero licensing cost"],
+        "consItems": [
+          "**Security and audit gaps**",
+          "Lack of audit trails",
+          "Need for external tools",
+          "Compliance challenges",
+          "No professional support"
+        ],
+        "evaluationText": "Not sustainable for security reasons"
       },
       "gitlabEE": {
-        "title": "GitLab Enterprise Edition Ultimate",
-        "pros": "Positive Points",
-        "cons": "Negative Points",
-        "evaluation": "IS Evaluation"
+        "title": "GitLab EE Ultimate",
+        "pros": "Pros",
+        "cons": "Cons",
+        "evaluation": "IS Evaluation",
+        "prosItems": [
+          "**Unified platform** (All-in-One)",
+          "Native SAST, DAST, etc integration",
+          "**Centralized governance**",
+          "Native compliance frameworks",
+          "Complete visibility",
+          "**Natural evolution** (low risk)"
+        ],
+        "consItems": ["Scanners may be less specialized than dedicated solutions"],
+        "evaluationText": "Natural evolution with complete DevSecOps suite"
       },
       "githubES": {
         "title": "GitHub Enterprise Server",
-        "pros": "Positive Points",
-        "cons": "Negative Points",
+        "pros": "Pros",
+        "cons": "Cons",
         "evaluation": "IS Evaluation",
+        "prosItems": [
+          "Mature ecosystem (GitHub Actions)",
+          "**CodeQL SAST** (market recognized)",
+          "**Push Protection** (preventive)",
+          "Outstanding static analysis"
+        ],
+        "consItems": [
+          "**Advanced Security as add-on**",
+          "Lack of native DAST",
+          "Less focus on compliance",
+          "**Complex migration project**"
+        ],
+        "evaluationText": "Excellence in specific SAST, higher complexity",
         "note": "For GitHub Enterprise Server to be comparable to GitLab EE in security, contracting the \"Advanced Security\" add-on is essential. Without it, the platform does not meet several critical security criteria."
       }
     },
     "recommendations": {
-      "title": "IS Recommendations",
+      "title": "Information Security Recommendation",
       "scenario1": {
-        "title": "Scenario 1: Maximum Security Priority",
-        "description": "GitLab EE Ultimate offers the most robust set of integrated security tools."
+        "title": "Scenario 1: GitLab EE Ultimate",
+        "description": "Natural evolution and low risk. Unified DevSecOps suite with centralized governance. Ideal for operational simplification and integrated vulnerability management."
       },
       "scenario2": {
-        "title": "Scenario 2: Cost vs Security Balance",
-        "description": "GitLab CE with external security tools can be a viable option."
-      }
+        "title": "Scenario 2: GitHub ES + Advanced Security",
+        "description": "Complex migration with technical excellence. Access to CodeQL (market-leading SAST) and Push Protection, but requires integration of complementary solutions."
+      },
+      "importantNote": "**📋 Important Note:** For GitHub Enterprise Server to be comparable to GitLab EE in security, contracting the \"Advanced Security\" add-on is **essential**. Without it, the platform does not meet various critical security criteria."
+    },
+    "cloudNote": {
+      "title": "Note on Cloud Solutions",
+      "description": "The **GitHub Enterprise Cloud** and **GitLab Cloud** options were not evaluated in this Information Security analysis, which focused specifically on on-premises solutions to meet the organization's data control requirements."
     }
   },
   "common": {
