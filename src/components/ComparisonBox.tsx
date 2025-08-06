@@ -217,6 +217,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             <div className="text-xs text-gray-600 mt-1">{selectedOption.cost.detalhes}</div>
             {(deploymentType === 'onpremises' ||
               (platform === 'github' && selectedOption.key === 'github_ee_cloud') ||
+              (platform === 'gitlab' && selectedOption.key === 'gitlab_ee_premium_cloud') ||
               (platform === 'gitlab' && selectedOption.key === 'gitlab_ee_ultimate_cloud')) && (
               <div className="text-xs text-red-600 mt-2 font-semibold">
                 ⚠️ {t('overview.comparison.aiWarnings.noAI')}
@@ -231,8 +232,7 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
               )}
             {deploymentType === 'cloud' &&
               platform === 'gitlab' &&
-              (selectedOption.key === 'gitlab_ee_premium_cloud' ||
-                selectedOption.key === 'gitlab_ee_ultimate_cloud_duo_pro' ||
+              (selectedOption.key === 'gitlab_ee_ultimate_cloud_duo_pro' ||
                 selectedOption.key === 'gitlab_ee_ultimate_cloud_duo_enterprise') && (
                 <div className="text-xs text-green-600 mt-2 font-semibold flex items-center gap-1">
                   <Zap className="w-3 h-3" />✅ {t('overview.comparison.aiWarnings.withAIIncluded')}
