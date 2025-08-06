@@ -23,12 +23,12 @@ const CostCard: React.FC<CostCardProps> = ({ platform, data }) => (
       <div className="ml-auto flex gap-1">
         {/* Ícones indicadores */}
         {(platform.includes('Cloud') || platform.includes('Ultimate Cloud')) && (
-          <Cloud className="w-4 h-4 text-blue-500" title="Cloud" />
+          <Cloud className="w-4 h-4 text-blue-500" aria-label="Cloud" />
         )}
         {(platform.includes('Copilot') ||
           platform.includes('Ultimate') ||
           platform.includes('Enterprise Cloud')) && (
-          <Zap className="w-4 h-4 text-yellow-500" title="IA Integrada" />
+          <Zap className="w-4 h-4 text-yellow-500" aria-label="IA Integrada" />
         )}
       </div>
     </div>
