@@ -4,7 +4,7 @@ import { CostData } from '../types';
 
 interface PlatformCardProps {
   name: string;
-  type: 'cloud' | 'on-premises';
+  type: 'cloud' | 'self-hosted';
   provider: 'github' | 'gitlab';
   advantages: string[];
   disadvantages: string[];

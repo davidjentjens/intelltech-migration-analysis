@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle, XCircle, DollarSign, Cloud, Server } from 'lucide-react';
+import { CheckCircle, XCircle, DollarSign, Cloud, Server, Zap } from 'lucide-react';
 import { CostData } from '../types';
 import { spreadsheetData, researchData } from '../data';
 
@@ -95,6 +95,22 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
               Cloud
             </button>
           </div>
+          
+          {/* Deployment Type Explanation */}
+          <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded text-sm text-blue-800">
+            {deploymentType === 'onpremises' ? (
+              <div>
+                <strong>Self-hosted:</strong> {platform === 'gitlab' 
+                  ? 'Implementação de VM na Oracle Cloud com instalação do GitLab. Requer configuração de rede, segurança e manutenção da infraestrutura.'
+                  : 'Implementação de VM na Azure com instalação do GitHub Enterprise. Requer configuração de rede, segurança e manutenção da infraestrutura.'
+                }
+              </div>
+            ) : (
+              <div>
+                <strong>Cloud:</strong> Serviço gerenciado pela plataforma. Não requer instalação, configuração ou manutenção de infraestrutura. Acesso imediato via navegador.
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Subtype Toggle */}
@@ -127,9 +143,21 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             <div><strong>Mensal:</strong> {selectedOption.cost.mensal}</div>
             <div><strong>Anual:</strong> {selectedOption.cost.anual}</div>
             <div className="text-xs text-gray-600 mt-1">{selectedOption.cost.detalhes}</div>
-            {deploymentType === 'onpremises' && (
+            {(deploymentType === 'onpremises' || (platform === 'github' && selectedOption.key === 'github_ee_cloud')) && (
               <div className="text-xs text-red-600 mt-2 font-semibold">
                 ⚠️ SEM recursos de IA (apenas Cloud)
+              </div>
+            )}
+            {(deploymentType === 'cloud' && platform === 'github' && selectedOption.key === 'github_ee_cloud_copilot') && (
+              <div className="text-xs text-green-600 mt-2 font-semibold flex items-center gap-1">
+                <Zap className="w-3 h-3" />
+                ✅ COM recursos de IA avançados
+              </div>
+            )}
+            {(deploymentType === 'cloud' && platform === 'gitlab') && (
+              <div className="text-xs text-green-600 mt-2 font-semibold flex items-center gap-1">
+                <Zap className="w-3 h-3" />
+                ✅ COM recursos de IA incluídos
               </div>
             )}
           </div>
@@ -148,14 +176,6 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
                 <span className="text-sm text-gray-700">{item}</span>
               </div>
             ))}
-            {deploymentType === 'onpremises' && (
-              <div className="flex items-start gap-2 mt-3 p-2 bg-red-50 border border-red-200 rounded">
-                <XCircle className="w-3 h-3 text-red-600 mt-1 flex-shrink-0" />
-                <span className="text-sm text-red-700 font-semibold">
-                  ⚠️ Recursos de IA NÃO disponíveis em soluções On-premises
-                </span>
-              </div>
-            )}
           </div>
         </div>
         
@@ -174,6 +194,18 @@ const ComparisonBox: React.FC<ComparisonBoxProps> = ({ platform }) => {
             ))}
           </div>
         </div>
+
+        {/* AI Warning for Self-hosted */}
+        {deploymentType === 'onpremises' && (
+          <div className="border-t pt-4">
+            <div className="flex items-start gap-2 p-3 bg-red-50 border border-red-200 rounded">
+              <XCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+              <span className="text-sm text-red-700 font-semibold">
+                ⚠️ Recursos de IA NÃO disponíveis em soluções Self-hosted
+              </span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

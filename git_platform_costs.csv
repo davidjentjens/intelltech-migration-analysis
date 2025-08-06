@@ -1,0 +1,5 @@
+Platform,Licensing,VM Specs (Recommended),Infrastructure Cost (USD),Total Monthly Cost (USD),Total Monthly Cost (BRL)
+GitLab CE Oracle VM,Free,4 vCPU 16GB RAM 100GB,$90-110,$90-110,R$ 507-620
+GitLab EE Premium Oracle VM,$29/user/month,8 vCPU 32GB RAM 200GB,$110-160,$29/user + $110-160,R$ 163/user + R$ 620-901
+GitLab EE Ultimate Oracle VM,$99/user/month,16 vCPU 64GB RAM 500GB,$220-320,$99/user + $220-320,R$ 558/user + R$ 1239-1804
+GitHub EE Azure VM,$21/user/month,16 vCPU 48-256GB RAM,$330-1200,$21/user + $330-1200,R$ 118/user + R$ 1859-6762

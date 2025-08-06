@@ -11,29 +11,25 @@ export const spreadsheetData: SpreadsheetData = {
     ],
     gitlab_ee_premium_onpremises: [
       "Evolução natural da plataforma atual",
-      "GitLab Duo incluído para recursos de IA",
-      "Mantém dados on-premises na Oracle Cloud",
+      "Mantém dados self-hosted na Oracle Cloud",
       "Aproveita infraestrutura Oracle existente",
       "Suporte profissional incluído"
     ],
     gitlab_ee_ultimate_onpremises: [
       "Evolução natural da plataforma atual",
-      "GitLab Duo Ultimate incluído para recursos de IA avançados",
-      "Mantém dados on-premises na Oracle Cloud",
+      "Mantém dados self-hosted na Oracle Cloud",
       "Aproveita infraestrutura Oracle existente",
       "Suporte profissional premium incluído",
       "Recursos de segurança avançados"
     ],
     gitlab_ee_premium_cloud: [
       "Nenhuma instalação necessária",
-      "GitLab Duo incluído para recursos de IA",
       "Atualizações automáticas",
       "Suporte profissional incluído",
       "Infraestrutura gerenciada"
     ],
     gitlab_ee_ultimate_cloud: [
       "Nenhuma instalação necessária",
-      "GitLab Duo Ultimate incluído para recursos de IA avançados",
       "Atualizações automáticas",
       "Suporte profissional premium incluído",
       "Infraestrutura gerenciada",
@@ -41,7 +37,6 @@ export const spreadsheetData: SpreadsheetData = {
     ],
     // GitHub Options
     github_ee_onpremises: [
-      "Dados on-premises (Azure)",
       "Controle total dos dados",
       "Recursos GitHub Enterprise completos"
     ],
@@ -50,32 +45,34 @@ export const spreadsheetData: SpreadsheetData = {
       "Nenhuma instalação necessária",
       "Atualizações automáticas",
       "Aproveita migração já iniciada",
-      "Infraestrutura gerenciada"
+      "Infraestrutura gerenciada",
+      "Acesso a ferramentas de IA de ponta"
     ],
     github_ee_cloud_copilot: [
       "Custo apenas de licenças e Copilot",
       "Nenhuma instalação necessária",
       "Atualizações automáticas",
-      "Integração direta do Copilot no código",
       "Aproveita migração já iniciada",
-      "Recursos de IA avançados para .NET"
+      "Infraestrutura gerenciada",
+      "Ferramentas de IA de ponta incluídas"
     ]
   },
   desvantagens: {
     // GitLab Options
     gitlab_ce_onpremises: [
+      "Não aproveitaremos o investimento realizado na migração",
       "Atualizações manuais (atualmente desatualizado)",
-      "Não tem integração com Copilot",
-      "Recursos limitados para modernização .NET"
+      "Recursos limitados para modernização .NET",
+      "Sem recursos de IA"
     ],
     gitlab_ee_premium_onpremises: [
-      "Reverter esforço de migração já iniciada",
-      "Recursos de IA inferiores ao GitHub Copilot para .NET"
+      "Não aproveitaremos o investimento realizado na migração",
+      "Sem recursos de IA"
     ],
     gitlab_ee_ultimate_onpremises: [
-      "Reverter esforço de migração já iniciada",
-      "Recursos de IA inferiores ao GitHub Copilot para .NET",
-      "Custo muito alto (R$ 25.592/mês)"
+      "Não aproveitaremos o investimento realizado na migração",
+      "Custo muito alto (R$ 25.592/mês)",
+      "Sem recursos de IA"
     ],
     gitlab_ee_premium_cloud: [
       "Código não fica na nossa nuvem",
@@ -89,12 +86,13 @@ export const spreadsheetData: SpreadsheetData = {
     // GitHub Options
     github_ee_onpremises: [
       "Configuração complexa (VM, rede, portas, VPN)",
-      "Não tem integração com o Copilot",
       "Custo duplo: VM Azure + licenças",
-      "Nova infraestrutura Azure necessária"
+      "Nova infraestrutura Azure necessária",
+      "Sem recursos de IA"
     ],
     github_ee_cloud: [
-      "Código não fica na nossa nuvem"
+      "Código não fica na nossa nuvem",
+      "Sem acesso às ferramentas de IA avançadas"
     ],
     github_ee_cloud_copilot: [
       "Código não fica na nossa nuvem",
