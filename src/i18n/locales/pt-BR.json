@@ -126,31 +126,62 @@
     "subtitle": "Análise detalhada das ferramentas de IA disponíveis",
     "copilotBenefits": "GitHub Copilot para Modernização do SHMS",
     "copilotDescription": "Ferramentas avançadas de IA que aceleram a modernização e melhorias de código",
+    "cloudOnlyWarning": "Recursos de IA APENAS disponíveis em soluções CLOUD",
     "migrationAssisted": {
       "title": "Migração Assistida .NET Framework → .NET Core",
-      "description": "O GitHub Copilot oferece ferramentas especializadas para modernizar aplicações .NET Framework para .NET Core, incluindo:",
+      "description": "O GitHub Copilot oferece ferramentas especializadas para modernizar aplicações .NET Framework para as versões mais recentes do .NET Core.",
       "benefits": {
         "apiConversion": "Conversão automática de APIs obsoletas",
         "dependencyAnalysis": "Análise inteligente de dependências",
         "modernPatterns": "Sugestões para patterns modernos",
         "compatibilityCheck": "Verificação de compatibilidade"
       },
-      "impact": "Reduz significativamente o tempo necessário para migração manual do código SHMS."
+      "impactLabel": "Impacto no SHMS",
+      "impact": "Pode nos auxiliar a atualizar o sistema para a mais nova versão do .NET Core, trazendo imensas melhorias de performance, segurança e funcionalidades modernas para a aplicação.",
+      "microsoftDocs": "Documentação Oficial Microsoft"
     },
     "unitTests": {
       "title": "Geração Automatizada de Unit Tests",
       "description": "Criação inteligente de testes unitários baseada no contexto do código existente:",
+      "shortDescription": "Criação automática de testes unitários abrangentes, melhorando a qualidade e confiabilidade do código.",
       "benefits": {
         "comprehensiveTests": "Testes abrangentes para cenários críticos",
         "edgeCases": "Cobertura de edge cases",
         "mockGeneration": "Geração automática de mocks",
         "testPatterns": "Aplicação de patterns de teste"
       },
+      "features": {
+        "automaticAnalysis": "Análise automática de métodos e classes",
+        "complexScenarios": "Geração de cenários de teste complexos",
+        "codeCoverage": "Melhoria da cobertura de código",
+        "legacyCode": "Testes para código legado"
+      },
       "impact": "Acelera significativamente a criação de testes para o SHMS."
+    },
+    "modernPatterns": {
+      "title": "Suggestions para Patterns Modernos",
+      "description": "Sugestões automáticas para implementar padrões modernos e melhores práticas de desenvolvimento.",
+      "features": {
+        "asyncAwait": "Conversão para padrões assíncronos (async/await)",
+        "dependencyInjection": "Implementação de Dependency Injection",
+        "contextualSuggestions": "Sugestões contextuais em tempo real",
+        "intelligentRefactoring": "Refactoring inteligente de código"
+      }
+    },
+    "azureIntegration": {
+      "title": "Integração com Azure Services",
+      "description": "Assistência especializada para integração com serviços Azure, otimizando a arquitetura cloud-native.",
+      "features": {
+        "serviceConfiguration": "Configuração de serviços Azure",
+        "cloudSecurity": "Implementação de segurança cloud",
+        "performanceOptimization": "Otimização de performance",
+        "monitoring": "Monitoramento e telemetria"
+      }
     },
     "codeAgent": {
       "title": "Agente de Código Inteligente",
       "description": "Delegue tarefas completas ao agente GitHub Copilot que planeja, escreve, testa e itera código automaticamente usando GitHub Actions.",
+      "impactLabel": "Impacto para SHMS",
       "impact": "Acelera desenvolvimento de funcionalidades complexas através de automação inteligente de tarefas."
     },
     "multipleModels": {
@@ -165,6 +196,7 @@
     "codeReview": {
       "title": "Code Review Automatizado",
       "description": "Análise automatizada de código antes da revisão humana, detectando bugs ocultos, vulnerabilidades e sugerindo melhorias.",
+      "benefitLabel": "Benefício",
       "benefit": "Reduz significativamente o tempo de code review e melhora a qualidade do código SHMS."
     },
     "intelligentSecurity": {
@@ -178,15 +210,23 @@
     },
     "comparison": {
       "title": "Comparação de Ecosistemas IA",
-      "githubTitle": "GitHub Copilot",
-      "gitlabTitle": "GitLab Duo",
-      "cost": "Custo",
-      "specificTools": "Ferramentas específicas para .NET modernization",
-      "matureEcosystem": "Ecosystem maduro para desenvolvimento Microsoft",
-      "codeAgent": "Agente de código para delegação automática de tarefas",
-      "multipleModels": "Múltiplos modelos de IA conforme necessidade",
-      "automatedReview": "Code review automatizado com detecção avançada de bugs",
-      "warningNoAI": "SEM recursos de IA (apenas Cloud)"
+      "githubTitle": "GitHub Copilot - Superioridade Técnica",
+      "gitlabTitle": "GitLab Duo - Limitações",
+      "github": {
+        "directIntegration": "<strong>Integração direta</strong> com Visual Studio/VS Code",
+        "specificTools": "<strong>Ferramentas específicas</strong> para .NET modernization",
+        "matureEcosystem": "<strong>Ecosystem maduro</strong> para desenvolvimento Microsoft",
+        "codeAgent": "<strong>Agente de código</strong> para delegação automática de tarefas",
+        "multipleModels": "<strong>Múltiplos modelos de IA</strong> (Claude, GPT, Gemini) conforme necessidade",
+        "automatedReview": "<strong>Code review automatizado</strong> com detecção avançada de bugs",
+        "cost": "<strong>Custo:</strong> Enterprise R$ 214,50/usuário/mês"
+      },
+      "gitlab": {
+        "limitedIntegration": "<strong>Integração limitada</strong> com IDEs .NET",
+        "lessMatture": "<strong>Ecosystem menos maduro</strong> para .NET",
+        "devSecOpsFocus": "<strong>Foco em DevSecOps</strong>, não modernização",
+        "cost": "<strong>Custo:</strong> Pro Premium R$ 214,50/usuário/mês"
+      }
     },
     "recommendation": {
       "title": "Recomendação de Recursos de IA",
@@ -195,7 +235,36 @@
       "technicalJustification": "Justificativa Técnica",
       "technicalDescription": "Análise baseada na superioridade do GitHub Copilot para desenvolvimento .NET, integração nativa com Azure services, e ferramentas específicas para modernização de aplicações legadas - fatores críticos para o sucesso da evolução do SHMS."
     },
-    "sources": "Fontes"
+    "sources": "Fontes",
+    "tools": {
+      "github": {
+        "directIntegration": "**Integração direta no código (VS Code/Studio)**",
+        "netMigration": "**Migração assistida .NET Framework → .NET Core**",
+        "unitTests": "Geração automatizada de unit tests",
+        "modernPatterns": "Sugestões para patterns modernos (async/await, DI)",
+        "azureIntegration": "Integração com Azure services",
+        "vulnerabilityResolution": "Resolução automática de vulnerabilidades",
+        "codeReview": "Code review automatizado com análise de bugs",
+        "codeAgent": "Agente de código para delegação de tarefas",
+        "multipleModels": "Suporte a múltiplos modelos de IA (Claude, GPT, Gemini)",
+        "smartSuggestions": "Sugestões de próximas edições inteligentes",
+        "duplicateDetection": "Detecção e supressão de código duplicado",
+        "securityFilters": "Filtros avançados de segurança em tempo real",
+        "actionsIntegration": "Integração nativa com GitHub Actions e workflows",
+        "legacyRefactoring": "Suporte completo a refatoração de código legado",
+        "additionalLicensing": "Investimento adicional em licenciamento especializado"
+      },
+      "gitlab": {
+        "includedInEE": "GitLab Duo incluído nos planos EE",
+        "devSecOpsFocus": "Foco em DevSecOps e privacidade",
+        "rootCauseAnalysis": "Análise de root cause em CI/CD",
+        "proPricing": "GitLab Duo Pro: R$ 214,50/usuário/mês",
+        "seatManagement": "Gestão automática de seats e permissões",
+        "ldapSamlIntegration": "Integração nativa com LDAP/SAML para controle",
+        "lessMatture": "Ecosystem menos maduro para .NET",
+        "noModernizationTools": "Sem ferramentas específicas de modernização"
+      }
+    }
   },
   "security": {
     "title": "Análise de Segurança da Informação",

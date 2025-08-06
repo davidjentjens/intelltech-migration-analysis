@@ -54,8 +54,49 @@ const disadvantageTranslations: Record<string, string> = {
   'Investimento adicional em licenças Copilot': 'disadvantages.additionalCopilotInvestment',
 };
 
+// Translation mapping for AI tools
+const aiToolsTranslations: Record<string, string> = {
+  // GitHub Copilot tools
+  '**Integração direta no código (VS Code/Studio)**': 'ai.tools.github.directIntegration',
+  '**Migração assistida .NET Framework → .NET Core**': 'ai.tools.github.netMigration',
+  'Geração automatizada de unit tests': 'ai.tools.github.unitTests',
+  'Sugestões para patterns modernos (async/await, DI)': 'ai.tools.github.modernPatterns',
+  'Integração com Azure services': 'ai.tools.github.azureIntegration',
+  'Resolução automática de vulnerabilidades': 'ai.tools.github.vulnerabilityResolution',
+  'Code review automatizado com análise de bugs': 'ai.tools.github.codeReview',
+  'Agente de código para delegação de tarefas': 'ai.tools.github.codeAgent',
+  'Suporte a múltiplos modelos de IA (Claude, GPT, Gemini)': 'ai.tools.github.multipleModels',
+  'Sugestões de próximas edições inteligentes': 'ai.tools.github.smartSuggestions',
+  'Detecção e supressão de código duplicado': 'ai.tools.github.duplicateDetection',
+  'Filtros avançados de segurança em tempo real': 'ai.tools.github.securityFilters',
+  'Integração nativa com GitHub Actions e workflows': 'ai.tools.github.actionsIntegration',
+  'Suporte completo a refatoração de código legado': 'ai.tools.github.legacyRefactoring',
+  'Investimento adicional em licenciamento especializado': 'ai.tools.github.additionalLicensing',
+
+  // GitLab Duo tools
+  'GitLab Duo incluído nos planos EE': 'ai.tools.gitlab.includedInEE',
+  'Foco em DevSecOps e privacidade': 'ai.tools.gitlab.devSecOpsFocus',
+  'Análise de root cause em CI/CD': 'ai.tools.gitlab.rootCauseAnalysis',
+  'GitLab Duo Pro: R$ 214,50/usuário/mês': 'ai.tools.gitlab.proPricing',
+  'Gestão automática de seats e permissões': 'ai.tools.gitlab.seatManagement',
+  'Integração nativa com LDAP/SAML para controle': 'ai.tools.gitlab.ldapSamlIntegration',
+  'Ecosystem menos maduro para .NET': 'ai.tools.gitlab.lessMatture',
+  'Sem ferramentas específicas de modernização': 'ai.tools.gitlab.noModernizationTools',
+};
+
 export const translateAdvantageOrDisadvantage = (text: string, t: TFunction): string => {
   const translationKey = advantageTranslations[text] || disadvantageTranslations[text];
+
+  if (translationKey) {
+    return t(translationKey);
+  }
+
+  // If no translation found, return the original text
+  return text;
+};
+
+export const translateAITool = (text: string, t: TFunction): string => {
+  const translationKey = aiToolsTranslations[text];
 
   if (translationKey) {
     return t(translationKey);

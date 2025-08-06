@@ -1,5 +1,7 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Zap } from 'lucide-react';
+import { translateAITool } from '../utils/translationHelpers';
 
 interface AICardProps {
   platform: string;
@@ -11,6 +13,7 @@ interface AICardProps {
 }
 
 const AICard: React.FC<AICardProps> = ({ platform, data }) => {
+  const { t } = useTranslation();
   const isGitHub = platform.includes('GitHub');
   const bgColor = isGitHub ? 'bg-gray-900' : 'bg-orange-500';
   const borderColor = isGitHub ? 'border-gray-900' : 'border-orange-500';
@@ -38,7 +41,7 @@ const AICard: React.FC<AICardProps> = ({ platform, data }) => {
           </div>
           <div className="flex gap-2">
             <div className="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">
-              CLOUD ONLY
+              {t('common.cloudOnly')}
             </div>
             <div className="bg-white text-gray-900 px-2 py-1 rounded text-xs font-bold">
               {data.rating}/10
@@ -74,13 +77,13 @@ const AICard: React.FC<AICardProps> = ({ platform, data }) => {
                 key={index}
                 className={`text-xs ${bgColor} ${textColor} px-2 py-1 rounded font-medium`}
               >
-                {renderTextWithBold(tool)}
+                {renderTextWithBold(translateAITool(tool, t))}
               </div>
             );
           })}
         </div>
         <div className="text-xs text-purple-600 bg-purple-50 p-2 rounded">
-          <strong>Fonte:</strong> {data.fonte}
+          <strong>{t('ai.sources')}:</strong> {data.fonte}
         </div>
       </div>
     </div>
