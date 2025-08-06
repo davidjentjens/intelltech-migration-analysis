@@ -5,6 +5,7 @@ import Image from 'next/image';
 import TabNavigation from '../components/TabNavigation';
 import OverviewSection from '../components/OverviewSection';
 import AISection from '../components/AISection';
+import SecuritySection from '../components/SecuritySection';
 
 const ComparisonPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -15,6 +16,8 @@ const ComparisonPage: React.FC = () => {
         return <OverviewSection />;
       case 'ai':
         return <AISection />;
+      case 'security':
+        return <SecuritySection />;
       default:
         return <OverviewSection />;
     }
@@ -38,7 +41,7 @@ const ComparisonPage: React.FC = () => {
           </div>
           
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            Análise Estratégica: GitHub vs GitLab
+            Análise Estratégica: GitHub vs GitLab / Self-Hosted vs Cloud + IA
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Comparativo detalhado das opções de versionamento considerando custos, recursos de IA, 
